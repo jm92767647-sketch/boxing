@@ -1,0 +1,325 @@
+{
+  "date": "2026-10-02",
+  "checks": [
+    "59 actions render without script errors",
+    "Every route occurrence retained in response/continuation/terminal groups",
+    "Actor sequence preserved",
+    "Every next choice stays in selected route suffix",
+    "N01 jab-parry-counter-jab-slip chain preserved",
+    "Back, stance, distance, supplement and search controls verified",
+    "Local links and source IDs verified"
+  ],
+  "jab_responses": [
+    "PARRY",
+    "BACK",
+    "SOUT",
+    "PULL",
+    "SSTEP",
+    "CATCH",
+    "LAT",
+    "SPLIT",
+    "SWAY",
+    "BLOCK",
+    "HG",
+    "SIN"
+  ],
+  "parry_variants": 6,
+  "actions": [
+    {
+      "action": "JAB",
+      "responses": 12,
+      "cases": 28
+    },
+    {
+      "action": "DOUBLE",
+      "responses": 6,
+      "cases": 8
+    },
+    {
+      "action": "BJAB",
+      "responses": 3,
+      "cases": 6
+    },
+    {
+      "action": "CROSS",
+      "responses": 8,
+      "cases": 10
+    },
+    {
+      "action": "LH",
+      "responses": 4,
+      "cases": 17
+    },
+    {
+      "action": "RH",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "BH",
+      "responses": 2,
+      "cases": 8
+    },
+    {
+      "action": "LU",
+      "responses": 4,
+      "cases": 4
+    },
+    {
+      "action": "RU",
+      "responses": 5,
+      "cases": 7
+    },
+    {
+      "action": "OVER",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "SHOVEL",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "COMBO",
+      "responses": 1,
+      "cases": 3
+    },
+    {
+      "action": "INTERCEPT",
+      "responses": 4,
+      "cases": 5
+    },
+    {
+      "action": "CJ",
+      "responses": 8,
+      "cases": 14
+    },
+    {
+      "action": "CC",
+      "responses": 5,
+      "cases": 11
+    },
+    {
+      "action": "CH",
+      "responses": 5,
+      "cases": 19
+    },
+    {
+      "action": "CB",
+      "responses": 2,
+      "cases": 6
+    },
+    {
+      "action": "DELAY",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "CHECK",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "SPLIT",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "HG",
+      "responses": 8,
+      "cases": 11
+    },
+    {
+      "action": "CATCH",
+      "responses": 7,
+      "cases": 11
+    },
+    {
+      "action": "BLOCK",
+      "responses": 6,
+      "cases": 23
+    },
+    {
+      "action": "ELBOW",
+      "responses": 13,
+      "cases": 16
+    },
+    {
+      "action": "PARRY",
+      "responses": 7,
+      "cases": 12
+    },
+    {
+      "action": "WIDE",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "SOUT",
+      "responses": 10,
+      "cases": 20
+    },
+    {
+      "action": "SIN",
+      "responses": 3,
+      "cases": 4
+    },
+    {
+      "action": "SSTEP",
+      "responses": 3,
+      "cases": 5
+    },
+    {
+      "action": "SPIVOT",
+      "responses": 3,
+      "cases": 4
+    },
+    {
+      "action": "PULL",
+      "responses": 2,
+      "cases": 3
+    },
+    {
+      "action": "SWAY",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "DUCK",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "ROLL",
+      "responses": 7,
+      "cases": 18
+    },
+    {
+      "action": "SHELL",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "BACK",
+      "responses": 7,
+      "cases": 16
+    },
+    {
+      "action": "LAT",
+      "responses": 3,
+      "cases": 5
+    },
+    {
+      "action": "PIVOT",
+      "responses": 2,
+      "cases": 6
+    },
+    {
+      "action": "CLINCH",
+      "responses": 0,
+      "cases": 6
+    },
+    {
+      "action": "FRAME",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "SMOTHER",
+      "responses": 2,
+      "cases": 9
+    },
+    {
+      "action": "JF",
+      "responses": 4,
+      "cases": 6
+    },
+    {
+      "action": "LF",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "SF",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "STEPF",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "PROBE",
+      "responses": 2,
+      "cases": 7
+    },
+    {
+      "action": "HAND",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "GM",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "LEVEL",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "RHYTHM",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "TEMPO",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "TRAP",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "OUTFOOT",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "INFOOT",
+      "responses": 1,
+      "cases": 1
+    },
+    {
+      "action": "PRESS",
+      "responses": 6,
+      "cases": 8
+    },
+    {
+      "action": "CPRESS",
+      "responses": 2,
+      "cases": 2
+    },
+    {
+      "action": "EXIT",
+      "responses": 1,
+      "cases": 37
+    },
+    {
+      "action": "RESET",
+      "responses": 1,
+      "cases": 46
+    },
+    {
+      "action": "READ",
+      "responses": 4,
+      "cases": 6
+    }
+  ],
+  "visual_browser_check": "Not performed: local-file browser navigation blocked by policy"
+}

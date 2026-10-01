@@ -1,0 +1,1513 @@
+{
+  "seed": 20261001,
+  "counts": {
+    "actions": 60,
+    "states": 401,
+    "edges": 514,
+    "scenarios": 27,
+    "paths": 48
+  },
+  "structural_errors": [],
+  "range_flags": [],
+  "dead_ends": 0,
+  "sampled_path_count": 20,
+  "audits": [
+    {
+      "path": "N08_P2",
+      "scenario": "N08",
+      "steps": [
+        {
+          "edge": "E0114",
+          "actor": "A",
+          "action": "RU",
+          "condition": "B 머리 중앙으로 짧은 상승 궤도 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0120",
+          "actor": "B",
+          "action": "SOUT",
+          "condition": "어퍼컷 상승 궤도의 옆으로 작은 이동; 단순 좌우 명칭이 아닌 실제 궤도 기준 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0121",
+          "actor": "B",
+          "action": "CH",
+          "condition": "A 뒷손 회수 전에 옆 표적 접근 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0122",
+          "actor": "A",
+          "action": "ROLL",
+          "condition": "훅 아래 곡선 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0123",
+          "actor": "A",
+          "action": "LU",
+          "condition": "B가 중앙으로 복귀할 때 앞손 상승 통로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0124",
+          "actor": "B",
+          "action": "BACK",
+          "condition": "발 후퇴로 상승 펀치 사거리 이탈 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "mid"
+        },
+        {
+          "edge": "E0125",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "무리한 어퍼컷 추격 중단 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "어퍼컷 바깥 슬립은 실제 상승 궤도 옆 이동이다. 훅 뒤 롤 다음 앞손 어퍼컷에는 머리 중앙 복귀 조건이 필요하고, 마지막 스텝백은 pocket→mid로 펀치 사거리만 벗어난다."
+    },
+    {
+      "path": "N11_P1",
+      "scenario": "N11",
+      "steps": [
+        {
+          "edge": "E0155",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "B 머리 직선 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0156",
+          "actor": "B",
+          "action": "SHELL",
+          "condition": "OO에서 어깨·뒷손·몸통 회전으로 해당 라인 가림 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0157",
+          "actor": "B",
+          "action": "CC",
+          "condition": "회전 복귀·B 뒷손 통로·사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0158",
+          "actor": "A",
+          "action": "SOUT",
+          "condition": "B 크로스 바깥 머리 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0159",
+          "actor": "A",
+          "action": "OVER",
+          "condition": "B가 같은 어깨면으로만 돌아오고 상단 궤도가 실제 열릴 때 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0160",
+          "actor": "B",
+          "action": "HG",
+          "condition": "상단 가드 재구성 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0161",
+          "actor": "A",
+          "action": "BH",
+          "condition": "높은 가드 아래 표적 도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0162",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "블록과 옆 출구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0163",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "각도·거리 다시 설정 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "숄더 셸은 OO와 해당 직선 라인에 한정했다. 오버핸드는 셸을 무조건 뚫는 것이 아니며 상단 공백을 확인한 경우만 허용한다."
+    },
+    {
+      "path": "N13_P1",
+      "scenario": "N13",
+      "steps": [
+        {
+          "edge": "E0176",
+          "actor": "A",
+          "action": "HAND",
+          "condition": "OS에서 앞손끼리 접촉 경쟁 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0177",
+          "actor": "A",
+          "action": "OUTFOOT",
+          "condition": "A 왼앞발을 B 오른앞발 바깥; 몸통도 정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0178",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "머리도 B 뒷손 라인에서 벗어나고 A 뒷손 통로 열림 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0179",
+          "actor": "B",
+          "action": "PIVOT",
+          "condition": "B가 A와 다시 마주보도록 재피벗 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0180",
+          "actor": "B",
+          "action": "CH",
+          "condition": "A 출구가 B 앞손 훅 사거리 안에 남은 경우 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0181",
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "측면 가드를 복구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0182",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "바깥발만 고집하지 않고 빈 출구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0183",
+          "actor": "B",
+          "action": "RESET",
+          "condition": "양쪽 각도·발 중립 재정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "바깥앞발과 몸통 정렬을 함께 요구한다. 상대가 재피벗하면 각도 우위는 사라질 수 있으며 앞손 훅 반격 전에 mid 진입 조건이 있다."
+    },
+    {
+      "path": "N19_P2",
+      "scenario": "N19",
+      "steps": [
+        {
+          "edge": "E0246",
+          "actor": "A",
+          "action": "JF",
+          "condition": "B가 잽 준비마다 카운터 크로스를 내는 습관 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0255",
+          "actor": "B",
+          "action": "READ",
+          "condition": "B가 페인트를 의심해 뒷손 보류 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0256",
+          "actor": "A",
+          "action": "JAB",
+          "condition": "보류를 읽고 실제 앞손 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0257",
+          "actor": "B",
+          "action": "CATCH",
+          "condition": "A 실제 신전에만 작은 방어 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0258",
+          "actor": "B",
+          "action": "CJ",
+          "condition": "A 회수 창의 실제 앞손 반격 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0259",
+          "actor": "A",
+          "action": "BACK",
+          "condition": "뒤 공간 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "outside"
+        },
+        {
+          "edge": "E0260",
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "과도한 반응 유도 보류하고 거리 정보 다시 획득 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "outside",
+          "after": "outside"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "페인트 무반응은 실제 잽을 막았다는 뜻이 아니다. 뒤 캐치는 실제 잽 신전을 보고 실행하고 사거리 밖 probe는 득점 공격으로 세지 않는다."
+    },
+    {
+      "path": "N21_P2",
+      "scenario": "N21",
+      "steps": [
+        {
+          "edge": "E0275",
+          "actor": "A",
+          "action": "STEPF",
+          "condition": "진입 단서로 B의 후퇴 성향 탐색 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0283",
+          "actor": "B",
+          "action": "READ",
+          "condition": "후퇴하지 않고 지지면 유지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0284",
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "A가 실제로 걸어들어올 때만 선제 직선 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0285",
+          "actor": "A",
+          "action": "SSTEP",
+          "condition": "몸통과 발을 궤도 밖으로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0286",
+          "actor": "A",
+          "action": "CH",
+          "condition": "새 측면 표적과 사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0287",
+          "actor": "B",
+          "action": "HG",
+          "condition": "측면 가드 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0288",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "옆 출구 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0289",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "서로 재정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "인터셉트는 스텝 페인트만 보고 맞는다고 하지 않는다. 실제 진입 발생이 전제이며 스텝 슬립 뒤 훅에는 지지면 회복이 필요하다."
+    },
+    {
+      "path": "N23_P1",
+      "scenario": "N23",
+      "steps": [
+        {
+          "edge": "E0308",
+          "actor": "A",
+          "action": "RU",
+          "condition": "가까운 상승 공격 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0309",
+          "actor": "B",
+          "action": "SMOTHER",
+          "condition": "완전 궤도 전 A 팔·몸 사이 거리 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0310",
+          "actor": "A",
+          "action": "FRAME",
+          "condition": "순간 접촉으로 분리 여지; 밀거나 잡은 채 치지 않음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0311",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "접촉이 합법 해제되고 짧은 공격 공간·양쪽 가드 복구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0312",
+          "actor": "A",
+          "action": "LU",
+          "condition": "분리 후 자유 앞손 중앙 통로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0313",
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "짧은 중앙 방어 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0314",
+          "actor": "B",
+          "action": "PIVOT",
+          "condition": "축발·출구 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0315",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "상대 궤도 밖으로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0316",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "상대와 재지향 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "프레임은 짧은 접촉 조건이다. RESET에서 접촉이 풀리고 pocket 공격 공간이 생긴 다음 어퍼컷한다. 잡고 치는 연쇄는 제거했다."
+    },
+    {
+      "path": "N14_P1",
+      "scenario": "N14",
+      "steps": [
+        {
+          "edge": "E0190",
+          "actor": "A",
+          "action": "JAB",
+          "condition": "OS: A 왼앞손과 B 오른앞손의 가까운 라인 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0191",
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "앞손의 작은 패리 선택; OO의 뒷손 처방을 복제하지 않음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0192",
+          "actor": "B",
+          "action": "CC",
+          "condition": "B 왼뒷손 통로가 열리고 머리 라인 분리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0193",
+          "actor": "A",
+          "action": "SOUT",
+          "condition": "B 왼직선 바깥은 A 오른쪽; 팔 궤도 기준 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0194",
+          "actor": "A",
+          "action": "OUTFOOT",
+          "condition": "빈 발 공간에 바깥앞발 확보; 스텝 완료 필요 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0195",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "A 뒷손 새 통로·도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0196",
+          "actor": "B",
+          "action": "HG",
+          "condition": "뒷손 방어와 발 복귀 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0197",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "다음 추격 전 옆으로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0198",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "서로 재지향 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "OS 앞손 패리를 OO 뒷손 패리와 구분한다. B 왼뒷손 바깥은 A 오른쪽이다. 바깥앞발 스텝 완료 후 A 오른뒷손을 낸다."
+    },
+    {
+      "path": "N04_P1",
+      "scenario": "N04",
+      "steps": [
+        {
+          "edge": "E0058",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "중거리 뒷손 직선 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0059",
+          "actor": "B",
+          "action": "SOUT",
+          "condition": "A 크로스 팔 바깥: OO에서 B 왼쪽 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0060",
+          "actor": "B",
+          "action": "CH",
+          "condition": "B가 짧은 앞손 훅 사거리·지지면 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0061",
+          "actor": "A",
+          "action": "ROLL",
+          "condition": "B 훅 궤도 아래 옆으로 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0062",
+          "actor": "A",
+          "action": "BH",
+          "condition": "롤 출구에서 B 보디 사거리 유지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0063",
+          "actor": "B",
+          "action": "ELBOW",
+          "condition": "합법 보디를 팔꿈치로 차단 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0064",
+          "actor": "B",
+          "action": "LU",
+          "condition": "A가 low center에 남고 중앙 상승 통로가 열렸을 때 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0065",
+          "actor": "A",
+          "action": "SMOTHER",
+          "condition": "어퍼컷 완전 궤도 전에 팔·몸 사이 공간 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0066",
+          "actor": "B",
+          "action": "CLINCH",
+          "condition": "자유손 교환을 중단 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0067",
+          "actor": "A",
+          "action": "BREAK",
+          "condition": "심판 break 뒤 재개 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "OO A 오른직선 바깥은 B 왼쪽이다. 슬립 후 훅은 가까운 사거리 조건, 마지막 스머더는 어퍼컷 완성 전 압축 조건이다."
+    },
+    {
+      "path": "N22_P1",
+      "scenario": "N22",
+      "steps": [
+        {
+          "edge": "E0290",
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "앞손으로 B 방어 박자 기록 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0291",
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "일정 박자 작은 패리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0292",
+          "actor": "A",
+          "action": "RHYTHM",
+          "condition": "가드 복구 후 다음 공격을 한 박자 지연 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0293",
+          "actor": "B",
+          "action": "WIDE",
+          "condition": "B가 옛 박자에 조기 패리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0294",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "B 패리 손 복귀 전 열린 실제 직선 통로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0295",
+          "actor": "B",
+          "action": "SOUT",
+          "condition": "새 궤도를 보고 팔 바깥 머리 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0296",
+          "actor": "B",
+          "action": "DELAY",
+          "condition": "A 다음 훅을 경계해 반격 한 박자 보류 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0297",
+          "actor": "A",
+          "action": "LH",
+          "condition": "B가 훅 사거리 안에 머물고 A 균형 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0298",
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "훅 아래 옆 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0299",
+          "actor": "B",
+          "action": "CH",
+          "condition": "A 훅 회수 창 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0300",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "짧은 가드와 출구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0301",
+          "actor": "B",
+          "action": "RESET",
+          "condition": "재지향 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "지연 박자 뒤 큰 패리는 자동 반응이 아닌 선택이다. B 지연 반격 중 A 훅이 가능하려면 mid 도달과 준비가 필요하며 다음 롤·훅도 회수 창 조건이다."
+    },
+    {
+      "path": "N05_P1",
+      "scenario": "N05",
+      "steps": [
+        {
+          "edge": "E0075",
+          "actor": "A",
+          "action": "JAB",
+          "condition": "잽 끝거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0076",
+          "actor": "B",
+          "action": "PULL",
+          "condition": "작은 후방 머리 이동만으로 잽이 짧아짐 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0077",
+          "actor": "B",
+          "action": "CC",
+          "condition": "B 균형·뒷손 사거리 남고 A 잽 회수 중 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0078",
+          "actor": "A",
+          "action": "SOUT",
+          "condition": "카운터 크로스 바깥으로 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0079",
+          "actor": "A",
+          "action": "CH",
+          "condition": "짧은 발 보정으로 훅 사거리 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0080",
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "B 가드 회수 완료; 훅 측면 닫음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0081",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "옆 출구 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0082",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "추격 대신 다시 잽 거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "풀 카운터는 rear load만으로 자동 성공하지 않는다. 거리·균형을 함께 요구하며 A 재훅은 mid 스텝 후로 한정한다."
+    },
+    {
+      "path": "N06_P2",
+      "scenario": "N06",
+      "steps": [
+        {
+          "edge": "E0091",
+          "actor": "A",
+          "action": "LH",
+          "condition": "B 머리 측면으로 짧은 앞손 훅 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0092",
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "높은 훅 아래 곡선으로 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0099",
+          "actor": "B",
+          "action": "CB",
+          "condition": "A 훅 회수 전에 롤 출구에서 합법 보디 도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0100",
+          "actor": "A",
+          "action": "ELBOW",
+          "condition": "가드 손을 유지하며 팔꿈치·회전 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0101",
+          "actor": "A",
+          "action": "RH",
+          "condition": "B 앞손 보디 공격으로 같은 쪽 머리가 실제 비는 경우 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0102",
+          "actor": "B",
+          "action": "HG",
+          "condition": "측면 가드 복구가 가능한 타이밍 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0103",
+          "actor": "B",
+          "action": "SMOTHER",
+          "condition": "다음 넓은 훅 startup 전에 밀착 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0104",
+          "actor": "A",
+          "action": "BREAK",
+          "condition": "심판 분리와 재개 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "롤 출구 보디 카운터는 상대 훅 회수 전의 창이다. 팔꿈치 블록에서 머리 손을 유지할 수 있고, 뒷손 훅은 실제 머리 공백에 한정한다."
+    },
+    {
+      "path": "N02_P2",
+      "scenario": "N02",
+      "steps": [
+        {
+          "edge": "E0034",
+          "actor": "A",
+          "action": "DOUBLE",
+          "condition": "첫 잽 후 일정 박자로 두 번째 startup / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0035",
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "두 잽 사이 간격이 열리고 B 직선 도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0036",
+          "actor": "A",
+          "action": "SIN",
+          "condition": "B 직선 안쪽으로 최소 이동; 자유손 공격 위험 동반 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0037",
+          "actor": "A",
+          "action": "CH",
+          "condition": "B 뒷손 회수 전 중거리 측면 표적 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0038",
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "짧은 훅 아래에서 머리 옆 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0039",
+          "actor": "B",
+          "action": "SMOTHER",
+          "condition": "A 다음 긴 공격 전 거리 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0040",
+          "actor": "A",
+          "action": "CLINCH",
+          "condition": "양팔 접촉으로 교환 멈춤; 홀딩 타격 금지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0041",
+          "actor": "B",
+          "action": "BREAK",
+          "condition": "심판 지시 뒤 합법 분리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "long"
+        },
+        {
+          "edge": "E0042",
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "재개 신호 후 앞손 거리 재확인 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "더블 잽 사이 인터셉트는 첫 잽과 두 번째 startup 간격이 있을 때만. 이후 SMOTHER는 이동을 포함해 clinch로 압축하며 BREAK 중 타격은 없다."
+    },
+    {
+      "path": "N04_P2",
+      "scenario": "N04",
+      "steps": [
+        {
+          "edge": "E0058",
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "중거리 뒷손 직선 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0068",
+          "actor": "B",
+          "action": "SIN",
+          "condition": "A 크로스 안쪽: OO에서 B 오른쪽; A 자유 앞손에 접근 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0069",
+          "actor": "A",
+          "action": "LH",
+          "condition": "B가 stationary이고 앞손 훅 궤도 안에 남음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0070",
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "늦지 않게 높이를 낮추고 옆 출구 선택 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0071",
+          "actor": "B",
+          "action": "RU",
+          "condition": "롤 이후 A가 중앙으로 돌아오고 짧은 상승 사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0072",
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "가드 중앙을 좁혀 받음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0073",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "연속 교환을 끊을 측면 공간 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0074",
+          "actor": "B",
+          "action": "RESET",
+          "condition": "옆 이동에 재지향 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "OO 크로스 안쪽은 B 오른쪽으로 A 자유 앞손에 접근한다. 이후 A 훅·B 롤은 순차 확정이 아닌 각 창에서의 가능한 선택이다."
+    },
+    {
+      "path": "N01_P3",
+      "scenario": "N01",
+      "steps": [
+        {
+          "edge": "E0018",
+          "actor": "A",
+          "action": "JF",
+          "condition": "페인트가 실제 잽과 비슷한 준비 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0019",
+          "actor": "B",
+          "action": "READ",
+          "condition": "B가 팔을 크게 옮기지 않고 거리 유지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0020",
+          "actor": "B",
+          "action": "CJ",
+          "condition": "A 페인트가 멈춘 박자에 실제 앞손 선제 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0021",
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "작은 캐치로 B 잽 수용 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0022",
+          "actor": "A",
+          "action": "JAB",
+          "condition": "B의 가드가 유지된다고 가정하고 실제 잽으로 다시 정보 획득 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0023",
+          "actor": "B",
+          "action": "BACK",
+          "condition": "뒤 공간이 있을 때 사거리 증가 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "outside"
+        },
+        {
+          "edge": "E0024",
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "사거리 밖에서 재탐색; 타격 성공 주장 없음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "outside",
+          "after": "outside"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "READ에서 가드 유지 후 B가 실제 카운터 잽을 선택한다. A 캐치 뒤 실제 잽은 같은 손 회수·지지면 전제이며 B 후퇴 뒤 밖에서 탐색한다."
+    },
+    {
+      "path": "N06_P1",
+      "scenario": "N06",
+      "steps": [
+        {
+          "edge": "E0091",
+          "actor": "A",
+          "action": "LH",
+          "condition": "B 머리 측면으로 짧은 앞손 훅 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0092",
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "높은 훅 아래 곡선으로 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0093",
+          "actor": "A",
+          "action": "RU",
+          "condition": "B가 롤 중 낮은 중앙을 통과하며 상승 궤도와 겹칠 때만 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0094",
+          "actor": "B",
+          "action": "SPIVOT",
+          "condition": "머리를 상승선 바깥으로 빼고 발각도도 변경 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0095",
+          "actor": "B",
+          "action": "CH",
+          "condition": "A 어퍼컷 팔 회수·측면 노출 사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0096",
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "반격 훅 면을 닫음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0097",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "옆 출구에서 가드 복구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0098",
+          "actor": "B",
+          "action": "RESET",
+          "condition": "새 bearing에 재정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "롤→어퍼컷 취약점을 낮은 중앙 통과에 한정했다. B가 옆으로 빠지면 해당 어퍼컷 기회는 사라진다. SPIVOT 성공이 전제다."
+    },
+    {
+      "path": "N17_P2",
+      "scenario": "N17",
+      "steps": [
+        {
+          "edge": "E0215",
+          "actor": "A",
+          "action": "PRESS",
+          "condition": "B 뒤 퇴로가 로프에 가까움 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0223",
+          "actor": "B",
+          "action": "CPRESS",
+          "condition": "A 진입 startup에 멈춤 직선 반격 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0224",
+          "actor": "A",
+          "action": "SOUT",
+          "condition": "B 직선 바깥 머리 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0225",
+          "actor": "A",
+          "action": "BH",
+          "condition": "A 도착 후 몸통 사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0226",
+          "actor": "B",
+          "action": "ELBOW",
+          "condition": "짧은 블록 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0227",
+          "actor": "B",
+          "action": "SMOTHER",
+          "condition": "넓은 다음 공격 전 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0228",
+          "actor": "A",
+          "action": "CLINCH",
+          "condition": "교환 중단 국면 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0229",
+          "actor": "B",
+          "action": "BREAK",
+          "condition": "심판 분리 후 퇴로·공간 새 설정 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "로프의 B는 큰 후퇴 대신 멈춤 반격을 선택한다. A 슬립 후 보디에는 pocket 진입 조건이 있으며 심판 분리는 위치 우위 자동 회복이 아니다."
+    },
+    {
+      "path": "N13_P2",
+      "scenario": "N13",
+      "steps": [
+        {
+          "edge": "E0176",
+          "actor": "A",
+          "action": "HAND",
+          "condition": "OS에서 앞손끼리 접촉 경쟁 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0184",
+          "actor": "B",
+          "action": "INFOOT",
+          "condition": "B가 안쪽에 있어도 머리·가드를 A 뒷손에서 offset / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0185",
+          "actor": "B",
+          "action": "CJ",
+          "condition": "안쪽 잽 통로와 거리 확보 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0186",
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "앞손 또는 뒷손 선택은 실제 궤도·손 위치에 따라 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0187",
+          "actor": "A",
+          "action": "LH",
+          "condition": "B 안쪽 진입이 훅 사거리 안에 남음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0188",
+          "actor": "B",
+          "action": "BACK",
+          "condition": "후퇴 공간으로 훅 밖 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "long"
+        },
+        {
+          "edge": "E0189",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "발 우위를 주장하기 전 상대 몸통 각도 재확인 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "안쪽 앞발에서 B 머리·가드 offset을 먼저 요구했다. 실제 앞손 잽에 A 캐치, A 훅에는 mid 진입이 있다. 바깥발 우위를 필연으로 취급하지 않는다."
+    },
+    {
+      "path": "N03_P2",
+      "scenario": "N03",
+      "steps": [
+        {
+          "edge": "E0050",
+          "actor": "A",
+          "action": "LF",
+          "condition": "반복 보디 위협으로 B가 반응하는 맥락 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0051",
+          "actor": "B",
+          "action": "ELBOW",
+          "condition": "이 분기는 글러브까지 실제로 내려간 과반응 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0052",
+          "actor": "A",
+          "action": "OVER",
+          "condition": "B 머리 가드 공백·뒷손 도달; 준비가 읽히지 않았을 때 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0053",
+          "actor": "B",
+          "action": "SPIVOT",
+          "condition": "오버핸드 궤도 밖으로 머리·축 회전 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0054",
+          "actor": "B",
+          "action": "CH",
+          "condition": "A 회전 회수 동안 측면 표적 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0055",
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "훅 측면 블록을 먼저 복구 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0056",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "출구가 열려 있을 때 옆으로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0057",
+          "actor": "B",
+          "action": "RESET",
+          "condition": "추격 중단 후 서로 재정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "ELBOW가 항상 머리를 여는 것은 아니다. 글러브까지 내려간 분기를 명시했다. 오버핸드 후 SPIVOT는 실제 궤도·발 공간 조건이다."
+    },
+    {
+      "path": "N05_P2",
+      "scenario": "N05",
+      "steps": [
+        {
+          "edge": "E0083",
+          "actor": "A",
+          "action": "JAB",
+          "condition": "B 풀 습관이 관찰된 끝거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0084",
+          "actor": "B",
+          "action": "PULL",
+          "condition": "B 머리 후방; 발은 그대로 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0085",
+          "actor": "A",
+          "action": "DOUBLE",
+          "condition": "A가 균형 있는 스텝으로 두 번째 잽 도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "mid"
+        },
+        {
+          "edge": "E0086",
+          "actor": "B",
+          "action": "BACK",
+          "condition": "상체만 더 젖히지 않고 발 후퇴 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "long"
+        },
+        {
+          "edge": "E0087",
+          "actor": "A",
+          "action": "BJAB",
+          "condition": "B 머리보다 가까운 몸통 표적 도달 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0088",
+          "actor": "B",
+          "action": "CATCH",
+          "condition": "보디 궤도에 맞춘 작은 방어; 머리 가드 유지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0089",
+          "actor": "B",
+          "action": "CJ",
+          "condition": "A 낮은 머리 복귀가 느리고 앞손 사거리 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        },
+        {
+          "edge": "E0090",
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "가드를 올리며 옆 이동 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "long",
+          "after": "long"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "두 번째 잽은 첫 잽 회수와 발 보정이 전제다. 풀 뒤 스텝백에 보디 잽이 가능한 것은 상대 몸통 사거리 여부에 한정한다."
+    },
+    {
+      "path": "N18_P1",
+      "scenario": "N18",
+      "steps": [
+        {
+          "edge": "E0230",
+          "actor": "A",
+          "action": "PRESS",
+          "condition": "코너의 B 출구 두 방향을 관찰 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0231",
+          "actor": "B",
+          "action": "HG",
+          "condition": "B 머리 가드 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "mid"
+        },
+        {
+          "edge": "E0232",
+          "actor": "A",
+          "action": "BH",
+          "condition": "B 팔꿈치 사이 합법 보디 표적; 가까이 진입 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "mid",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0233",
+          "actor": "B",
+          "action": "ELBOW",
+          "condition": "보디 블록; 머리 글러브 유지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0234",
+          "actor": "B",
+          "action": "SMOTHER",
+          "condition": "A 긴 후속 궤도 전에 압축 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0235",
+          "actor": "A",
+          "action": "FRAME",
+          "condition": "짧은 합법 접촉만; 밀기·목 고정 없이 공간 감지 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "clinch"
+        },
+        {
+          "edge": "E0236",
+          "actor": "B",
+          "action": "PIVOT",
+          "condition": "한 출구가 실제 열리고 상대 팔에 잠기지 않음 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "clinch",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0237",
+          "actor": "B",
+          "action": "EXIT",
+          "condition": "자유로운 출구로 코너 탈출 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "pocket"
+        },
+        {
+          "edge": "E0238",
+          "actor": "A",
+          "action": "RESET",
+          "condition": "가드·발·거리 재정렬 / 같은 손 재사용은 회수·지지면 확보가 전제",
+          "before": "pocket",
+          "after": "mid"
+        }
+      ],
+      "structural_result": "통과",
+      "logical_review": "코너에서 보디 공격 후 B 스머더가 성공한 조건이다. A 프레임은 목 고정·밀기 없이 짧은 접촉으로 제한하고, B 피벗·탈출은 실제 출구가 열리는 경우만 허용한다."
+    }
+  ],
+  "scope": "구조·상태 스냅샷 연속성·범위와 작성한 경로의 조건 검토. 실제 경기 성공률 검증이나 독립 전문가 인증은 아니다."
+}
