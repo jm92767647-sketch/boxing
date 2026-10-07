@@ -1,13 +1,17 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-07",
   "checks": [
-    "59 actions render without script errors",
+    "60 actions render without script errors",
     "Every route occurrence retained in response/continuation/terminal groups",
     "Actor sequence preserved",
     "Every next choice stays in selected route suffix",
     "N01 jab-parry-counter-jab-slip chain preserved",
     "Back, stance, distance, supplement and search controls verified",
-    "Local links and source IDs verified"
+    "Local links and source IDs verified",
+    "41 new routes maintain coarse state continuity",
+    "No new range-dependent punches from outside",
+    "Audit direct response counts match route data",
+    "Uppercut-duck risk note, clinch failure and re-entry interception visible"
   ],
   "jab_responses": [
     "PARRY",
@@ -21,94 +25,95 @@
     "SWAY",
     "BLOCK",
     "HG",
-    "SIN"
+    "SIN",
+    "DUCK"
   ],
-  "parry_variants": 6,
+  "parry_variants": 7,
   "actions": [
     {
       "action": "JAB",
-      "responses": 12,
-      "cases": 28
+      "responses": 13,
+      "cases": 37
     },
     {
       "action": "DOUBLE",
-      "responses": 6,
-      "cases": 8
+      "responses": 7,
+      "cases": 9
     },
     {
       "action": "BJAB",
-      "responses": 3,
-      "cases": 6
+      "responses": 4,
+      "cases": 8
     },
     {
       "action": "CROSS",
-      "responses": 8,
-      "cases": 10
+      "responses": 9,
+      "cases": 12
     },
     {
       "action": "LH",
-      "responses": 4,
-      "cases": 17
+      "responses": 5,
+      "cases": 22
     },
     {
       "action": "RH",
-      "responses": 2,
-      "cases": 2
+      "responses": 6,
+      "cases": 6
     },
     {
       "action": "BH",
-      "responses": 2,
-      "cases": 8
+      "responses": 3,
+      "cases": 10
     },
     {
       "action": "LU",
       "responses": 4,
-      "cases": 4
+      "cases": 6
     },
     {
       "action": "RU",
-      "responses": 5,
-      "cases": 7
+      "responses": 6,
+      "cases": 10
     },
     {
       "action": "OVER",
-      "responses": 2,
-      "cases": 2
+      "responses": 5,
+      "cases": 5
     },
     {
       "action": "SHOVEL",
-      "responses": 2,
-      "cases": 2
-    },
-    {
-      "action": "COMBO",
-      "responses": 1,
+      "responses": 3,
       "cases": 3
     },
     {
+      "action": "COMBO",
+      "responses": 2,
+      "cases": 4
+    },
+    {
       "action": "INTERCEPT",
-      "responses": 4,
-      "cases": 5
+      "responses": 5,
+      "cases": 16
     },
     {
       "action": "CJ",
       "responses": 8,
-      "cases": 14
+      "cases": 19
     },
     {
       "action": "CC",
       "responses": 5,
-      "cases": 11
+      "cases": 13
     },
     {
       "action": "CH",
       "responses": 5,
-      "cases": 19
+      "cases": 22
     },
     {
       "action": "CB",
       "responses": 2,
-      "cases": 6
+      "cases": 8
     },
     {
       "action": "DELAY",
@@ -128,27 +133,27 @@
     {
       "action": "HG",
       "responses": 8,
-      "cases": 11
+      "cases": 12
     },
     {
       "action": "CATCH",
       "responses": 7,
-      "cases": 11
-    },
-    {
-      "action": "BLOCK",
-      "responses": 6,
-      "cases": 23
-    },
-    {
-      "action": "ELBOW",
-      "responses": 13,
       "cases": 16
     },
     {
+      "action": "BLOCK",
+      "responses": 8,
+      "cases": 51
+    },
+    {
+      "action": "ELBOW",
+      "responses": 14,
+      "cases": 20
+    },
+    {
       "action": "PARRY",
-      "responses": 7,
-      "cases": 12
+      "responses": 9,
+      "cases": 17
     },
     {
       "action": "WIDE",
@@ -158,12 +163,12 @@
     {
       "action": "SOUT",
       "responses": 10,
-      "cases": 20
+      "cases": 21
     },
     {
       "action": "SIN",
-      "responses": 3,
-      "cases": 4
+      "responses": 4,
+      "cases": 5
     },
     {
       "action": "SSTEP",
@@ -177,8 +182,8 @@
     },
     {
       "action": "PULL",
-      "responses": 2,
-      "cases": 3
+      "responses": 3,
+      "cases": 4
     },
     {
       "action": "SWAY",
@@ -187,13 +192,13 @@
     },
     {
       "action": "DUCK",
-      "responses": 1,
-      "cases": 1
+      "responses": 2,
+      "cases": 4
     },
     {
       "action": "ROLL",
       "responses": 7,
-      "cases": 18
+      "cases": 20
     },
     {
       "action": "SHELL",
@@ -202,13 +207,13 @@
     },
     {
       "action": "BACK",
-      "responses": 7,
-      "cases": 16
+      "responses": 8,
+      "cases": 26
     },
     {
       "action": "LAT",
       "responses": 3,
-      "cases": 5
+      "cases": 9
     },
     {
       "action": "PIVOT",
@@ -217,8 +222,8 @@
     },
     {
       "action": "CLINCH",
-      "responses": 0,
-      "cases": 6
+      "responses": 2,
+      "cases": 8
     },
     {
       "action": "FRAME",
@@ -232,28 +237,28 @@
     },
     {
       "action": "JF",
-      "responses": 4,
-      "cases": 6
+      "responses": 5,
+      "cases": 7
     },
     {
       "action": "LF",
-      "responses": 1,
-      "cases": 1
+      "responses": 3,
+      "cases": 3
     },
     {
       "action": "SF",
-      "responses": 2,
-      "cases": 2
+      "responses": 3,
+      "cases": 4
     },
     {
       "action": "STEPF",
-      "responses": 2,
-      "cases": 2
+      "responses": 3,
+      "cases": 4
     },
     {
       "action": "PROBE",
       "responses": 2,
-      "cases": 7
+      "cases": 11
     },
     {
       "action": "HAND",
@@ -297,8 +302,8 @@
     },
     {
       "action": "PRESS",
-      "responses": 6,
-      "cases": 8
+      "responses": 7,
+      "cases": 10
     },
     {
       "action": "CPRESS",
@@ -307,19 +312,24 @@
     },
     {
       "action": "EXIT",
-      "responses": 1,
-      "cases": 37
+      "responses": 2,
+      "cases": 73
     },
     {
       "action": "RESET",
-      "responses": 1,
-      "cases": 46
+      "responses": 2,
+      "cases": 59
     },
     {
       "action": "READ",
-      "responses": 4,
-      "cases": 6
+      "responses": 5,
+      "cases": 14
+    },
+    {
+      "action": "REENTER",
+      "responses": 1,
+      "cases": 8
     }
   ],
-  "visual_browser_check": "Not performed: local-file browser navigation blocked by policy"
+  "visual_browser_check": "Public website verification is recorded separately after deployment"
 }

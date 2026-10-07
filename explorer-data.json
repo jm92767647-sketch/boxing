@@ -741,6 +741,18 @@
       "ranges": [
         "clinch"
       ]
+    },
+    {
+      "id": "REENTER",
+      "name": "Re-entry · 거리 재진입",
+      "category": "POSITION",
+      "benefit": "사거리 밖에서 공격 가능한 거리를 다시 확보",
+      "vulnerability": "진입 박자가 읽히면 인터셉트·체크 훅에 노출",
+      "action": "상대 위치를 확인하며 가드와 발 간격을 유지해 재진입",
+      "ranges": [
+        "outside",
+        "long"
+      ]
     }
   ],
   "sources": [
@@ -897,6 +909,20 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/23121380/",
       "type": "측정 방법 연구",
       "scope": "공격·방어·페인트 관찰 항목의 분류 근거; 여기서는 초록으로만 사용."
+    },
+    {
+      "id": "S23",
+      "title": "Boxing Canada, Competition Introduction Workbook (2018)",
+      "url": "https://boxingcanada.org/wp-content/uploads/2025/06/Workbook-Competition-Introduction-manual-EN.pdf",
+      "type": "국가연맹 코치 워크북",
+      "scope": "인쇄 pp.23–24, 34, 54–57: 훅·어퍼컷 방어와 카운터의 교육 항목. 전체 연쇄의 실험 검증이 아니다."
+    },
+    {
+      "id": "S24",
+      "title": "England Boxing, shadow drills week nine (2020)",
+      "url": "https://www.englandboxing.org/news_articles/england-boxing-shadow-boxing-drills-week-nine/",
+      "type": "국가연맹 코치 드릴",
+      "scope": "공격–방어–공격, 발로 거리와 각도 조절, 반대 스탠스 조건을 다시 확인하는 원리."
     }
   ],
   "scenarios": [
@@ -9719,7 +9745,8 @@
           "confidence": "biomechanical inference",
           "edge": "E0090"
         }
-      ]
+      ],
+      "review_note": "후퇴 뒤 사거리 확인: 여기의 BACK은 원모델에서 long(끝거리)이며 사거리 밖으로 확정하지 않는다. BJAB 조건은 실제 몸통 도달을 요구한다. outside이면 재진입부터 필요하다."
     },
     {
       "id": "N06_P1",
@@ -12690,7 +12717,8 @@
           "confidence": "biomechanical inference",
           "edge": "E0119"
         }
-      ]
+      ],
+      "review_note": "위험·실패 복구 예시: 어퍼컷에 중앙 덕은 유효 방어로 추천하지 않는다. 뒤의 블록은 같은 최초 어퍼컷이 도착하기 전 가능한 경우뿐이며 이미 피격되면 경로 중단."
     },
     {
       "id": "N08_P2",
@@ -16416,7 +16444,8 @@
           "confidence": "biomechanical inference",
           "edge": "E0154"
         }
-      ]
+      ],
+      "review_note": "CPRESS는 이 경로에서 실제 짧은 직선 저지 타격을 포함한다. 뒤 CATCH의 대상은 그 직선이며 단순 압박·발 움직임을 캐치하는 것이 아니다."
     },
     {
       "id": "N11_P1",
@@ -31136,7 +31165,8 @@
           "confidence": "biomechanical inference",
           "edge": "E0301"
         }
-      ]
+      ],
+      "review_note": "DELAY는 이 구간에서 타격 실행보다 반격 보류를 뜻한다. 상대의 LH가 시작된 뒤 ROLL은 그 훅을 피하는 동작이다."
     },
     {
       "id": "N22_P2",
@@ -32567,7 +32597,8 @@
           "confidence": "biomechanical inference",
           "edge": "E0316"
         }
-      ]
+      ],
+      "review_note": "밀착 후 RESET은 실제 접촉 해제와 pocket 거리 복구를 포함한다. FRAME 뒤 잡은 채 LU를 치는 경로가 아니다."
     },
     {
       "id": "N23_P2",
@@ -40104,9 +40135,5561 @@
           "edge": "X16_5"
         }
       ]
+    },
+    {
+      "id": "X17",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "손 방어 후 공격자의 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "DOUBLE",
+          "condition": "머리 공격의 실제 사거리에서 타격하며 자유손 가드와 회수 균형을 남긴다. 더블 잽은 두 잽 전체를 포함한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X17_1"
+        },
+        {
+          "actor": "B",
+          "action": "HG",
+          "condition": "실제 공격면에 맞춰 글러브·전완으로 막는다. 훅·오버핸드는 측면, 어퍼컷은 아래에서 올라오는 중앙을 닫는다. 머리 양옆만 덮는 가드로 어퍼컷 방어를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X17_2"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X17_3"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X17_4"
+        }
+      ]
+    },
+    {
+      "id": "X18",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "손 방어 후 공격자의 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RH",
+          "condition": "머리 공격의 실제 사거리에서 타격하며 자유손 가드와 회수 균형을 남긴다. 더블 잽은 두 잽 전체를 포함한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X18_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "실제 공격면에 맞춰 글러브·전완으로 막는다. 훅·오버핸드는 측면, 어퍼컷은 아래에서 올라오는 중앙을 닫는다. 머리 양옆만 덮는 가드로 어퍼컷 방어를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X18_2"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X18_3"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X18_4"
+        }
+      ]
+    },
+    {
+      "id": "X19",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "손 방어 후 공격자의 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LU",
+          "condition": "머리 공격의 실제 사거리에서 타격하며 자유손 가드와 회수 균형을 남긴다. 더블 잽은 두 잽 전체를 포함한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X19_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "실제 공격면에 맞춰 글러브·전완으로 막는다. 훅·오버핸드는 측면, 어퍼컷은 아래에서 올라오는 중앙을 닫는다. 머리 양옆만 덮는 가드로 어퍼컷 방어를 가정하지 않는다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X19_2"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X19_3"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X19_4"
+        }
+      ]
+    },
+    {
+      "id": "X20",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "손 방어 후 공격자의 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RU",
+          "condition": "머리 공격의 실제 사거리에서 타격하며 자유손 가드와 회수 균형을 남긴다. 더블 잽은 두 잽 전체를 포함한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X20_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "실제 공격면에 맞춰 글러브·전완으로 막는다. 훅·오버핸드는 측면, 어퍼컷은 아래에서 올라오는 중앙을 닫는다. 머리 양옆만 덮는 가드로 어퍼컷 방어를 가정하지 않는다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X20_2"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X20_3"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X20_4"
+        }
+      ]
+    },
+    {
+      "id": "X21",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "손 방어 후 공격자의 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "OVER",
+          "condition": "머리 공격의 실제 사거리에서 타격하며 자유손 가드와 회수 균형을 남긴다. 더블 잽은 두 잽 전체를 포함한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X21_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "실제 공격면에 맞춰 글러브·전완으로 막는다. 훅·오버핸드는 측면, 어퍼컷은 아래에서 올라오는 중앙을 닫는다. 머리 양옆만 덮는 가드로 어퍼컷 방어를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X21_2"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X21_3"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X21_4"
+        }
+      ]
+    },
+    {
+      "id": "X22",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "높은 훅 아래 회피와 출구 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LH",
+          "condition": "머리 높이의 수평 훅. 어퍼컷이나 보디 훅과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X22_1"
+        },
+        {
+          "actor": "B",
+          "action": "DUCK",
+          "condition": "무릎으로 머리를 실제 높은 훅 궤도 아래로 낮추되 시선·가드·균형을 유지한다. 중앙 어퍼컷이 이어지면 같은 덕을 반복하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X22_2"
+        },
+        {
+          "actor": "B",
+          "action": "CH",
+          "condition": "덕 이후 실제 훅 사거리와 내 훅 회수 창이 있고 발·몸통 지지가 확보될 때 짧은 훅 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X22_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "내 훅 회수가 끝나 상대의 실제 반격 훅 쪽을 글러브·전완으로 막을 시간이 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X22_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X22_5"
+        }
+      ]
+    },
+    {
+      "id": "X23",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "높은 훅 아래 회피와 출구 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RH",
+          "condition": "머리 높이의 수평 훅. 어퍼컷이나 보디 훅과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X23_1"
+        },
+        {
+          "actor": "B",
+          "action": "DUCK",
+          "condition": "무릎으로 머리를 실제 높은 훅 궤도 아래로 낮추되 시선·가드·균형을 유지한다. 중앙 어퍼컷이 이어지면 같은 덕을 반복하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X23_2"
+        },
+        {
+          "actor": "B",
+          "action": "CH",
+          "condition": "덕 이후 실제 훅 사거리와 내 훅 회수 창이 있고 발·몸통 지지가 확보될 때 짧은 훅 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X23_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "내 훅 회수가 끝나 상대의 실제 반격 훅 쪽을 글러브·전완으로 막을 시간이 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X23_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X23_5"
+        }
+      ]
+    },
+    {
+      "id": "X24",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "뒷손 훅의 롤 대응",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RH",
+          "condition": "중거리의 높은 뒷손 훅.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X24_1"
+        },
+        {
+          "actor": "B",
+          "action": "ROLL",
+          "condition": "높은 훅 아래를 지나 옆으로 롤하며 가드와 시선을 유지한다. 허리만 접는 동작이 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X24_2"
+        },
+        {
+          "actor": "B",
+          "action": "CB",
+          "condition": "롤 출구에서 보디 표적·짧은 사거리·균형이 모두 확보될 때만 보디 훅 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X24_3"
+        },
+        {
+          "actor": "A",
+          "action": "ELBOW",
+          "condition": "상대의 보디 반격이 들어오는 쪽 팔꿈치로 막으며 머리 글러브를 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X24_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X24_5"
+        }
+      ]
+    },
+    {
+      "id": "X25",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LH",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X25_6"
+        }
+      ]
+    },
+    {
+      "id": "X26",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RH",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X26_6"
+        }
+      ]
+    },
+    {
+      "id": "X27",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "BH",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X27_6"
+        }
+      ]
+    },
+    {
+      "id": "X28",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LU",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X28_6"
+        }
+      ]
+    },
+    {
+      "id": "X29",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "RU",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X29_6"
+        }
+      ]
+    },
+    {
+      "id": "X30",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "OVER",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X30_6"
+        }
+      ]
+    },
+    {
+      "id": "X31",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "SHOVEL",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X31_6"
+        }
+      ]
+    },
+    {
+      "id": "X32",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "후퇴 뒤 추격과 재진입",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "COMBO",
+          "condition": "공격 사거리 안에서 시작하고 회수할 발 균형을 남긴다. 콤비네이션은 머리 잽–크로스로 한정한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "타격 도착 전에 뒤 공간을 써서 사거리 밖으로 나간다. 코너·로프에 막히면 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_2"
+        },
+        {
+          "actor": "A",
+          "action": "REENTER",
+          "condition": "공격을 회수한 뒤 발로 실제 사거리를 다시 만든다. 밖에 서서 훅·어퍼컷을 명중시킨다고 가정하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_3"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 내 재진입 박자를 읽고 직선 사거리·통로를 확보한 때만 먼저 직선 타격. 재진입은 안전한 행동으로 보장되지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_4"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대 인터셉트의 실제 직선 궤도에 회수한 글러브를 놓을 시간이 있을 때만 방어.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_5"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X32_6"
+        }
+      ]
+    },
+    {
+      "id": "X33",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "잽 아래 회피와 훅 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JAB",
+          "condition": "중거리 머리 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X33_1"
+        },
+        {
+          "actor": "B",
+          "action": "DUCK",
+          "condition": "잽 궤도 아래로 작은 무릎 굽힘. 눈을 상대에게 두고 뒷손·어퍼컷 라인을 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X33_2"
+        },
+        {
+          "actor": "B",
+          "action": "CH",
+          "condition": "잽 회수 창과 훅 사거리가 겹치고 덕 이후 균형이 남을 때만 앞손 훅 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X33_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대의 실제 훅 궤도를 가드로 막고 내 앞손을 회수한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X33_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X33_5"
+        }
+      ]
+    },
+    {
+      "id": "X34",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "패리 뒤 보디 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JAB",
+          "condition": "머리 잽. 상대의 보디 반격 사거리를 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S11"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X34_1"
+        },
+        {
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "작은 뒷손 패리 뒤 가드를 회복한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S11"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X34_2"
+        },
+        {
+          "actor": "B",
+          "action": "CB",
+          "condition": "패리 후 짧은 보디 훅 사거리·지지면·내 회수 창이 맞을 때만 보디 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S11"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X34_3"
+        },
+        {
+          "actor": "A",
+          "action": "ELBOW",
+          "condition": "상대 보디 훅 쪽 팔꿈치로 실제 궤도를 닫고 머리 가드를 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S11"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X34_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S11"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X34_5"
+        }
+      ]
+    },
+    {
+      "id": "X35",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "블록 뒤 바로 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JAB",
+          "condition": "중거리 머리 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X35_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "작은 뒷손 블록으로 잽을 받고 자유 앞손을 남긴다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X35_2"
+        },
+        {
+          "actor": "B",
+          "action": "CJ",
+          "condition": "내 앞손 복귀 창에 머리가 앞손 사거리 안에 남으면 상대 카운터 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X35_3"
+        },
+        {
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "내 뒷손 글러브로 상대의 실제 잽을 받고 앞손을 회수한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X35_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X35_5"
+        }
+      ]
+    },
+    {
+      "id": "X36",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "훅 방어 뒤 직선 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LH",
+          "condition": "합법 표적에 앞손 훅을 내되 자유 뒷손 가드와 균형을 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X36_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "머리 훅은 해당 측면의 전완·글러브, 보디 훅은 팔꿈치로 실제 궤도를 방어한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X36_2"
+        },
+        {
+          "actor": "B",
+          "action": "CC",
+          "condition": "내 훅 복귀 창에서 상대의 뒷손 직선 사거리·통로·발 지지가 확보되면 크로스 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X36_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대의 실제 크로스 궤도를 회수한 글러브로 막을 시간이 남아 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X36_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X36_5"
+        }
+      ]
+    },
+    {
+      "id": "X37",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "훅 방어 뒤 직선 반격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "BH",
+          "condition": "합법 표적에 앞손 훅을 내되 자유 뒷손 가드와 균형을 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X37_1"
+        },
+        {
+          "actor": "B",
+          "action": "ELBOW",
+          "condition": "머리 훅은 해당 측면의 전완·글러브, 보디 훅은 팔꿈치로 실제 궤도를 방어한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X37_2"
+        },
+        {
+          "actor": "B",
+          "action": "CC",
+          "condition": "내 훅 복귀 창에서 상대의 뒷손 직선 사거리·통로·발 지지가 확보되면 크로스 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X37_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "상대의 실제 크로스 궤도를 회수한 글러브로 막을 시간이 남아 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X37_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S23",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X37_5"
+        }
+      ]
+    },
+    {
+      "id": "X38",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "보디 직선의 패리 선택",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "BJAB",
+          "condition": "중거리 합법 보디 표적으로 잽. 머리를 전방 중앙에 오래 두지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X38_1"
+        },
+        {
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "보디 직선 손목 부근에 작게 패리하되 머리 가드를 크게 내리지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X38_2"
+        },
+        {
+          "actor": "B",
+          "action": "CJ",
+          "condition": "보디 잽 후 내 머리 복귀 창에 상대 자유 앞손이 닿으면 머리 잽 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X38_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "내 앞손 회수와 머리 가드 복귀가 완료되어 실제 반격 잽을 막을 시간이 있을 때.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X38_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S11",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X38_5"
+        }
+      ]
+    },
+    {
+      "id": "X39",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "발로 공격선 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "CROSS",
+          "condition": "머리 타격을 내면서 방향과 회수 균형을 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X39_1"
+        },
+        {
+          "actor": "B",
+          "action": "LAT",
+          "condition": "타격 도착 전에 발과 머리를 실제 궤도 밖으로 옮기고 옆 공간을 확보한다. 발만 옮기고 머리가 남으면 회피가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X39_2"
+        },
+        {
+          "actor": "A",
+          "action": "RESET",
+          "condition": "빗나간 펀치를 회수하고 상대의 새 위치를 확인해 방향을 다시 맞춘다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X39_3"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 과도하게 추격하지 않고 가드를 유지해 다음 진입을 읽는다. 이후 교환은 미작성.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X39_4"
+        }
+      ]
+    },
+    {
+      "id": "X40",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "발로 공격선 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "OVER",
+          "condition": "머리 타격을 내면서 방향과 회수 균형을 유지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X40_1"
+        },
+        {
+          "actor": "B",
+          "action": "LAT",
+          "condition": "타격 도착 전에 발과 머리를 실제 궤도 밖으로 옮기고 옆 공간을 확보한다. 발만 옮기고 머리가 남으면 회피가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X40_2"
+        },
+        {
+          "actor": "A",
+          "action": "RESET",
+          "condition": "빗나간 펀치를 회수하고 상대의 새 위치를 확인해 방향을 다시 맞춘다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X40_3"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 과도하게 추격하지 않고 가드를 유지해 다음 진입을 읽는다. 이후 교환은 미작성.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X40_4"
+        }
+      ]
+    },
+    {
+      "id": "X41",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 무반응",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LF",
+          "condition": "균형·가드를 남긴 페인트. 실제 타격과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X41_1"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 손·머리·발을 크게 움직이지 않고 반응을 보류한다. 페인트가 반드시 방어를 유도하는 것은 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X41_2"
+        },
+        {
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "실제 머리 탐색 잽이 닿는 거리와 시간을 확보한 뒤 새 반응을 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X41_3"
+        },
+        {
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "상대가 페인트가 아닌 실제 탐색 잽 신전에 작은 패리를 한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X41_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X41_5"
+        }
+      ]
+    },
+    {
+      "id": "X42",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 중 상대가 먼저 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "LF",
+          "condition": "상대 타격 사거리 근처의 페인트. 손·발을 과도하게 내밀지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X42_1"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 페인트 준비를 진입 신호로 읽고 실제 직선 사거리·통로를 확보했을 때 먼저 친다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X42_2"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "실제 상대 직선에 맞춰 가드를 닫을 시간과 균형이 남아 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X42_3"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X42_4"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X42_5"
+        }
+      ]
+    },
+    {
+      "id": "X43",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 무반응",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "SF",
+          "condition": "균형·가드를 남긴 페인트. 실제 타격과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X43_1"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 손·머리·발을 크게 움직이지 않고 반응을 보류한다. 페인트가 반드시 방어를 유도하는 것은 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X43_2"
+        },
+        {
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "실제 머리 탐색 잽이 닿는 거리와 시간을 확보한 뒤 새 반응을 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X43_3"
+        },
+        {
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "상대가 페인트가 아닌 실제 탐색 잽 신전에 작은 패리를 한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X43_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X43_5"
+        }
+      ]
+    },
+    {
+      "id": "X44",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 중 상대가 먼저 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "SF",
+          "condition": "상대 타격 사거리 근처의 페인트. 손·발을 과도하게 내밀지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X44_1"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 페인트 준비를 진입 신호로 읽고 실제 직선 사거리·통로를 확보했을 때 먼저 친다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X44_2"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "실제 상대 직선에 맞춰 가드를 닫을 시간과 균형이 남아 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X44_3"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X44_4"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X44_5"
+        }
+      ]
+    },
+    {
+      "id": "X45",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 무반응",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "STEPF",
+          "condition": "균형·가드를 남긴 페인트. 실제 타격과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X45_1"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 손·머리·발을 크게 움직이지 않고 반응을 보류한다. 페인트가 반드시 방어를 유도하는 것은 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X45_2"
+        },
+        {
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "실제 머리 탐색 잽이 닿는 거리와 시간을 확보한 뒤 새 반응을 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X45_3"
+        },
+        {
+          "actor": "B",
+          "action": "PARRY",
+          "condition": "상대가 페인트가 아닌 실제 탐색 잽 신전에 작은 패리를 한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X45_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X45_5"
+        }
+      ]
+    },
+    {
+      "id": "X46",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트 중 상대가 먼저 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "STEPF",
+          "condition": "상대 타격 사거리 근처의 페인트. 손·발을 과도하게 내밀지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X46_1"
+        },
+        {
+          "actor": "B",
+          "action": "INTERCEPT",
+          "condition": "상대가 페인트 준비를 진입 신호로 읽고 실제 직선 사거리·통로를 확보했을 때 먼저 친다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X46_2"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "실제 상대 직선에 맞춰 가드를 닫을 시간과 균형이 남아 있을 때만.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X46_3"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X46_4"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S14",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X46_5"
+        }
+      ]
+    },
+    {
+      "id": "X47",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "페인트에 거리 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JF",
+          "condition": "사거리 경계의 잽 페인트.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X47_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "뒤 공간을 써 사거리 밖으로 물러나 교환을 거부한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X47_2"
+        },
+        {
+          "actor": "A",
+          "action": "PROBE",
+          "condition": "아직 밖이면 탐색은 거리 확인만 한다. 명중 잽으로 계산하지 않는다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X47_3"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "가드를 유지하고 실제 재진입을 관찰한다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X47_4"
+        }
+      ]
+    },
+    {
+      "id": "X48",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "회피 위치를 추적하는 후속 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "B",
+          "action": "JAB",
+          "condition": "상대의 실제 머리 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X48_1"
+        },
+        {
+          "actor": "A",
+          "action": "SOUT",
+          "condition": "실제 잽 공격선에서 머리를 옮기되 가드·시선·발 균형을 남긴다. 슬립 방향은 공격 팔 기준이며 좌우 고정 규칙이 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X48_2"
+        },
+        {
+          "actor": "B",
+          "action": "LH",
+          "condition": "상대가 내 새 머리·몸 위치를 다시 읽고 실제 후속 표적·사거리·타이밍을 확보했을 때만 추적 공격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X48_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "후속 훅·직선은 그 실제 머리 궤도, 보디 잽은 실제 몸통 궤도를 방어한다. 앞선 잽 회피만으로 방어 완료를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X48_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X48_5"
+        }
+      ]
+    },
+    {
+      "id": "X49",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "회피 위치를 추적하는 후속 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "B",
+          "action": "JAB",
+          "condition": "상대의 실제 머리 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X49_1"
+        },
+        {
+          "actor": "A",
+          "action": "SIN",
+          "condition": "실제 잽 공격선에서 머리를 옮기되 가드·시선·발 균형을 남긴다. 슬립 방향은 공격 팔 기준이며 좌우 고정 규칙이 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X49_2"
+        },
+        {
+          "actor": "B",
+          "action": "CROSS",
+          "condition": "상대가 내 새 머리·몸 위치를 다시 읽고 실제 후속 표적·사거리·타이밍을 확보했을 때만 추적 공격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X49_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "후속 훅·직선은 그 실제 머리 궤도, 보디 잽은 실제 몸통 궤도를 방어한다. 앞선 잽 회피만으로 방어 완료를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X49_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X49_5"
+        }
+      ]
+    },
+    {
+      "id": "X50",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "회피 위치를 추적하는 후속 타격",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "B",
+          "action": "JAB",
+          "condition": "상대의 실제 머리 잽.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X50_1"
+        },
+        {
+          "actor": "A",
+          "action": "PULL",
+          "condition": "실제 잽 공격선에서 머리를 옮기되 가드·시선·발 균형을 남긴다. 슬립 방향은 공격 팔 기준이며 좌우 고정 규칙이 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X50_2"
+        },
+        {
+          "actor": "B",
+          "action": "BJAB",
+          "condition": "상대가 내 새 머리·몸 위치를 다시 읽고 실제 후속 표적·사거리·타이밍을 확보했을 때만 추적 공격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X50_3"
+        },
+        {
+          "actor": "A",
+          "action": "ELBOW",
+          "condition": "후속 훅·직선은 그 실제 머리 궤도, 보디 잽은 실제 몸통 궤도를 방어한다. 앞선 잽 회피만으로 방어 완료를 가정하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X50_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S07",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X50_5"
+        }
+      ]
+    },
+    {
+      "id": "X51",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "롤 출구의 어퍼컷 위협",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "B",
+          "action": "LH",
+          "condition": "상대의 높은 머리 훅.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S23"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X51_1"
+        },
+        {
+          "actor": "A",
+          "action": "ROLL",
+          "condition": "가드·시선·균형을 유지하며 높은 훅 아래로 롤한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S23"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X51_2"
+        },
+        {
+          "actor": "B",
+          "action": "RU",
+          "condition": "상대가 롤 출구의 중앙 머리 표적을 다시 읽고 짧은 어퍼컷 사거리·시간 창을 확보했을 때만 상승 타격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S23"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X51_3"
+        },
+        {
+          "actor": "A",
+          "action": "BLOCK",
+          "condition": "다시 중앙으로 숙이지 않고 실제 상승 궤도를 글러브·전완으로 닫을 시간이 있을 때.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S23"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X51_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S08",
+            "S23"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X51_5"
+        }
+      ]
+    },
+    {
+      "id": "X52",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "클린치 시도 거부",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "CLINCH",
+          "condition": "아직 잡거나 팔을 고정하지 않은 근접 클린치 시도. 성공·심판 분리를 자동 가정하지 않는다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X52_1"
+        },
+        {
+          "actor": "B",
+          "action": "BACK",
+          "condition": "접촉이 닫히기 전에 뒤 공간과 시간을 확보해 사거리 밖으로 나간다. 이미 붙잡힌 상태라면 이 분기는 불가.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X52_2"
+        },
+        {
+          "actor": "A",
+          "action": "RESET",
+          "condition": "밀착이 성립하지 않았으므로 가드와 발을 복구하고 거리를 재평가한다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X52_3"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "상대가 재진입을 읽으며 가드를 유지한다.",
+          "before": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "outside",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X52_4"
+        }
+      ]
+    },
+    {
+      "id": "X53",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "클린치의 옆 이탈",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "CLINCH",
+          "condition": "팔을 고정하기 전의 클린치 시도.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X53_1"
+        },
+        {
+          "actor": "B",
+          "action": "LAT",
+          "condition": "접촉 전 옆 공간으로 돌아 밀착을 피한다. 붙잡힌 팔을 비틀어 치는 선택이 아니다.",
+          "before": {
+            "distance": "pocket",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X53_2"
+        },
+        {
+          "actor": "A",
+          "action": "RESET",
+          "condition": "상대의 새 방향을 읽고 가드와 발을 복구한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X53_3"
+        },
+        {
+          "actor": "B",
+          "action": "READ",
+          "condition": "가드를 유지하며 다음 접근을 읽는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X53_4"
+        }
+      ]
+    },
+    {
+      "id": "X54",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "이탈에 대한 출구 차단",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "가드와 발 간격을 유지하며 열려 있는 옆 출구로 이탈을 시도한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X54_1"
+        },
+        {
+          "actor": "B",
+          "action": "PRESS",
+          "condition": "상대가 출구를 미리 읽고 발로 통로를 좁힌다. 뒤를 따라가는 것과 구별한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X54_2"
+        },
+        {
+          "actor": "B",
+          "action": "JAB",
+          "condition": "상대가 다시 실제 잽 사거리에 들어왔을 때만 잽. 링 커팅 자체는 펀치가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X54_3"
+        },
+        {
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "상대의 실제 잽을 받으며 새 옆 통로를 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X54_4"
+        },
+        {
+          "actor": "A",
+          "action": "LAT",
+          "condition": "다른 옆 출구가 열렸을 때만 재이탈. 코너에 갇히면 이 연쇄 중단.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "near ropes"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X54_5"
+        }
+      ]
+    },
+    {
+      "id": "X55",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "압박을 잽으로 저지",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "PRESS",
+          "condition": "상대 사거리 경계에서 가드를 유지해 링 공간을 좁힌다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X55_1"
+        },
+        {
+          "actor": "B",
+          "action": "CJ",
+          "condition": "상대가 압박 스텝 중 실제 앞손 사거리와 내 진입 창을 확보했을 때 잽으로 저지한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X55_2"
+        },
+        {
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "상대 실제 잽을 받아 무조건 전진하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X55_3"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X55_4"
+        },
+        {
+          "actor": "B",
+          "action": "RESET",
+          "condition": "상대가 즉시 추격하지 않고 양쪽에 가드·발·방향을 복구할 시간이 생겼을 때 재정렬. 자동 재개가 아니다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OO",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S06",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X55_5"
+        }
+      ]
+    },
+    {
+      "id": "X56",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "스탠스별 직선 교환",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JAB",
+          "condition": "SS는 두 사우스포, OS는 A 오소독스·B 사우스포. 상대 앞손의 실제 위치와 잽 통로를 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X56_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "상대가 실제 잽 통로에 맞는 글러브로 작게 막고 자유손을 남긴다. OO의 손 방향을 자동 복사하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X56_2"
+        },
+        {
+          "actor": "B",
+          "action": "CJ",
+          "condition": "상대 자유 앞손이 실제로 닿고 가드 회수 창이 있을 때 잽 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X56_3"
+        },
+        {
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "반대 스탠스의 교차 앞손을 포함해 실제 잽 면에 맞는 글러브로 받는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X56_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "SS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X56_5"
+        }
+      ]
+    },
+    {
+      "id": "X57",
+      "scene": "재검증 보완",
+      "kind": "supplement",
+      "topic": "스탠스별 직선 교환",
+      "authored_on": "2026-10-07",
+      "assumptions": "조건부 예시: 거리·방향·가드·균형·시간 창을 확인한다. 피격·균형 붕괴·출구 차단이면 이 연쇄를 중단하고 새 상태를 평가한다.",
+      "steps": [
+        {
+          "actor": "A",
+          "action": "JAB",
+          "condition": "SS는 두 사우스포, OS는 A 오소독스·B 사우스포. 상대 앞손의 실제 위치와 잽 통로를 확인한다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X57_1"
+        },
+        {
+          "actor": "B",
+          "action": "BLOCK",
+          "condition": "상대가 실제 잽 통로에 맞는 글러브로 작게 막고 자유손을 남긴다. OO의 손 방향을 자동 복사하지 않는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X57_2"
+        },
+        {
+          "actor": "B",
+          "action": "CJ",
+          "condition": "상대 자유 앞손이 실제로 닿고 가드 회수 창이 있을 때 잽 반격.",
+          "before": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X57_3"
+        },
+        {
+          "actor": "A",
+          "action": "CATCH",
+          "condition": "반대 스탠스의 교차 앞손을 포함해 실제 잽 면에 맞는 글러브로 받는다.",
+          "before": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X57_4"
+        },
+        {
+          "actor": "A",
+          "action": "EXIT",
+          "condition": "펀치를 회수하고 상대의 다음 타격 전에 실제로 열린 옆 출구로 이동. 출구가 막히면 이 선택은 불가.",
+          "before": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "after": {
+            "distance": "mid",
+            "stance": "OS",
+            "ring_position": "center"
+          },
+          "sources": [
+            "S13",
+            "S24"
+          ],
+          "confidence": "조건부 전술 추론",
+          "edge": "X57_5"
+        }
+      ]
     }
   ],
-  "date": "2026-10-02",
+  "date": "2026-10-07",
   "original_count": 48,
-  "supplement_count": 16
+  "supplement_count": 57,
+  "audit": {
+    "date": "2026-10-07",
+    "reviewed_routes": 64,
+    "added_routes": 41,
+    "total_routes": 105,
+    "method": "모든 경로의 행위자·직접 전이·방어 대상·거리 조건·심판 종료를 검사하고, 기본 공격과 방어의 빈칸을 코칭 자료와 대조했다. 새 연쇄는 조건부 전술 추론이다.",
+    "findings": [
+      "훅·어퍼컷·오버핸드·콤비네이션의 손 방어와 거리 이탈 보완",
+      "잽의 덕·블록 후 잽·패리 후 보디 반격 추가",
+      "페인트 무반응·거리 이탈·선제 타격 추가",
+      "슬립·풀·롤 위치를 다시 겨냥하는 후속 타격 명시",
+      "사거리 밖 후퇴 뒤 재진입과 인터셉트 분리",
+      "클린치 실패·이탈 출구 차단·압박 저지 추가",
+      "SS·OS의 실제 손 위치 조건 추가"
+    ],
+    "clarified_routes": {
+      "N08_P1": "위험·실패 복구 예시: 어퍼컷에 중앙 덕은 유효 방어로 추천하지 않는다. 뒤의 블록은 같은 최초 어퍼컷이 도착하기 전 가능한 경우뿐이며 이미 피격되면 경로 중단.",
+      "N05_P2": "후퇴 뒤 사거리 확인: 여기의 BACK은 원모델에서 long(끝거리)이며 사거리 밖으로 확정하지 않는다. BJAB 조건은 실제 몸통 도달을 요구한다. outside이면 재진입부터 필요하다.",
+      "N10_P2": "CPRESS는 이 경로에서 실제 짧은 직선 저지 타격을 포함한다. 뒤 CATCH의 대상은 그 직선이며 단순 압박·발 움직임을 캐치하는 것이 아니다.",
+      "N22_P1": "DELAY는 이 구간에서 타격 실행보다 반격 보류를 뜻한다. 상대의 LH가 시작된 뒤 ROLL은 그 훅을 피하는 동작이다.",
+      "N23_P1": "밀착 후 RESET은 실제 접촉 해제와 pocket 거리 복구를 포함한다. FRAME 뒤 잡은 채 LU를 치는 경로가 아니다."
+    },
+    "coverage": [
+      {
+        "action": "JAB",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "CATCH",
+          "HG",
+          "LAT",
+          "PARRY",
+          "PULL",
+          "SIN",
+          "SOUT",
+          "SPLIT",
+          "SSTEP",
+          "SWAY"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "CATCH",
+          "DUCK",
+          "HG",
+          "LAT",
+          "PARRY",
+          "PULL",
+          "SIN",
+          "SOUT",
+          "SPLIT",
+          "SSTEP",
+          "SWAY"
+        ],
+        "added": [
+          "DUCK"
+        ]
+      },
+      {
+        "action": "DOUBLE",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "CHECK",
+          "INTERCEPT",
+          "LAT",
+          "SSTEP"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "CHECK",
+          "HG",
+          "INTERCEPT",
+          "LAT",
+          "SSTEP"
+        ],
+        "added": [
+          "HG"
+        ]
+      },
+      {
+        "action": "BJAB",
+        "before": [
+          "BACK",
+          "CATCH",
+          "ELBOW"
+        ],
+        "after": [
+          "BACK",
+          "CATCH",
+          "ELBOW",
+          "PARRY"
+        ],
+        "added": [
+          "PARRY"
+        ]
+      },
+      {
+        "action": "CROSS",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "HG",
+          "PARRY",
+          "PIVOT",
+          "SHELL",
+          "SIN",
+          "SOUT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "HG",
+          "LAT",
+          "PARRY",
+          "PIVOT",
+          "SHELL",
+          "SIN",
+          "SOUT"
+        ],
+        "added": [
+          "LAT"
+        ]
+      },
+      {
+        "action": "LH",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "ROLL",
+          "SPIVOT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "DUCK",
+          "ROLL",
+          "SPIVOT"
+        ],
+        "added": [
+          "DUCK"
+        ]
+      },
+      {
+        "action": "RH",
+        "before": [
+          "HG",
+          "INTERCEPT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "DUCK",
+          "HG",
+          "INTERCEPT",
+          "ROLL"
+        ],
+        "added": [
+          "BACK",
+          "BLOCK",
+          "DUCK",
+          "ROLL"
+        ]
+      },
+      {
+        "action": "BH",
+        "before": [
+          "ELBOW",
+          "EXIT"
+        ],
+        "after": [
+          "BACK",
+          "ELBOW",
+          "EXIT"
+        ],
+        "added": [
+          "BACK"
+        ]
+      },
+      {
+        "action": "LU",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "SMOTHER",
+          "SOUT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "SMOTHER",
+          "SOUT"
+        ],
+        "added": []
+      },
+      {
+        "action": "RU",
+        "before": [
+          "BLOCK",
+          "DUCK",
+          "SMOTHER",
+          "SOUT",
+          "SPIVOT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "DUCK",
+          "SMOTHER",
+          "SOUT",
+          "SPIVOT"
+        ],
+        "added": [
+          "BACK"
+        ]
+      },
+      {
+        "action": "OVER",
+        "before": [
+          "HG",
+          "SPIVOT"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "HG",
+          "LAT",
+          "SPIVOT"
+        ],
+        "added": [
+          "BACK",
+          "BLOCK",
+          "LAT"
+        ]
+      },
+      {
+        "action": "SHOVEL",
+        "before": [
+          "ELBOW",
+          "SMOTHER"
+        ],
+        "after": [
+          "BACK",
+          "ELBOW",
+          "SMOTHER"
+        ],
+        "added": [
+          "BACK"
+        ]
+      },
+      {
+        "action": "COMBO",
+        "before": [
+          "HG"
+        ],
+        "after": [
+          "BACK",
+          "HG"
+        ],
+        "added": [
+          "BACK"
+        ]
+      },
+      {
+        "action": "INTERCEPT",
+        "before": [
+          "PARRY",
+          "SIN",
+          "SOUT",
+          "SSTEP"
+        ],
+        "after": [
+          "BLOCK",
+          "PARRY",
+          "SIN",
+          "SOUT",
+          "SSTEP"
+        ],
+        "added": [
+          "BLOCK"
+        ]
+      },
+      {
+        "action": "CJ",
+        "before": [
+          "BACK",
+          "BLOCK",
+          "CATCH",
+          "EXIT",
+          "PARRY",
+          "RESET",
+          "SOUT",
+          "SSTEP"
+        ],
+        "after": [
+          "BACK",
+          "BLOCK",
+          "CATCH",
+          "EXIT",
+          "PARRY",
+          "RESET",
+          "SOUT",
+          "SSTEP"
+        ],
+        "added": []
+      },
+      {
+        "action": "CC",
+        "before": [
+          "BLOCK",
+          "CATCH",
+          "HG",
+          "SIN",
+          "SOUT"
+        ],
+        "after": [
+          "BLOCK",
+          "CATCH",
+          "HG",
+          "SIN",
+          "SOUT"
+        ],
+        "added": []
+      },
+      {
+        "action": "CH",
+        "before": [
+          "BLOCK",
+          "EXIT",
+          "HG",
+          "PIVOT",
+          "ROLL"
+        ],
+        "after": [
+          "BLOCK",
+          "EXIT",
+          "HG",
+          "PIVOT",
+          "ROLL"
+        ],
+        "added": []
+      },
+      {
+        "action": "CB",
+        "before": [
+          "ELBOW",
+          "EXIT"
+        ],
+        "after": [
+          "ELBOW",
+          "EXIT"
+        ],
+        "added": []
+      },
+      {
+        "action": "DELAY",
+        "before": [
+          "DOUBLE",
+          "LH"
+        ],
+        "after": [
+          "DOUBLE",
+          "LH"
+        ],
+        "added": []
+      },
+      {
+        "action": "CHECK",
+        "before": [
+          "BLOCK"
+        ],
+        "after": [
+          "BLOCK"
+        ],
+        "added": []
+      },
+      {
+        "action": "SPLIT",
+        "before": [
+          "PARRY",
+          "SOUT"
+        ],
+        "after": [
+          "PARRY",
+          "SOUT"
+        ],
+        "added": []
+      },
+      {
+        "action": "HG",
+        "before": [
+          "BH",
+          "BJAB",
+          "GM"
+        ],
+        "after": [
+          "BH",
+          "BJAB",
+          "EXIT",
+          "GM"
+        ],
+        "added": [
+          "EXIT"
+        ]
+      },
+      {
+        "action": "CATCH",
+        "before": [
+          "CROSS"
+        ],
+        "after": [
+          "CROSS"
+        ],
+        "added": []
+      },
+      {
+        "action": "BLOCK",
+        "before": [
+          "DOUBLE",
+          "EXIT",
+          "LH"
+        ],
+        "after": [
+          "DOUBLE",
+          "EXIT",
+          "LH"
+        ],
+        "added": []
+      },
+      {
+        "action": "ELBOW",
+        "before": [
+          "EXIT",
+          "LH",
+          "LU",
+          "OVER"
+        ],
+        "after": [
+          "EXIT",
+          "LH",
+          "LU",
+          "OVER"
+        ],
+        "added": []
+      },
+      {
+        "action": "PARRY",
+        "before": [
+          "DOUBLE",
+          "EXIT",
+          "RHYTHM"
+        ],
+        "after": [
+          "DOUBLE",
+          "EXIT",
+          "RHYTHM"
+        ],
+        "added": []
+      },
+      {
+        "action": "WIDE",
+        "before": [
+          "CROSS",
+          "LH"
+        ],
+        "after": [
+          "CROSS",
+          "LH"
+        ],
+        "added": []
+      },
+      {
+        "action": "SOUT",
+        "before": [
+          "DOUBLE",
+          "EXIT",
+          "LH"
+        ],
+        "after": [
+          "DOUBLE",
+          "EXIT",
+          "LH"
+        ],
+        "added": []
+      },
+      {
+        "action": "SIN",
+        "before": [
+          "EXIT",
+          "LH"
+        ],
+        "after": [
+          "CROSS",
+          "EXIT",
+          "LH"
+        ],
+        "added": [
+          "CROSS"
+        ]
+      },
+      {
+        "action": "SSTEP",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "SPIVOT",
+        "before": [
+          "RESET"
+        ],
+        "after": [
+          "RESET"
+        ],
+        "added": []
+      },
+      {
+        "action": "PULL",
+        "before": [
+          "DOUBLE"
+        ],
+        "after": [
+          "BJAB",
+          "DOUBLE"
+        ],
+        "added": [
+          "BJAB"
+        ]
+      },
+      {
+        "action": "SWAY",
+        "before": [
+          "LEVEL"
+        ],
+        "after": [
+          "LEVEL"
+        ],
+        "added": []
+      },
+      {
+        "action": "DUCK",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "ROLL",
+        "before": [
+          "EXIT",
+          "RU"
+        ],
+        "after": [
+          "EXIT",
+          "RU"
+        ],
+        "added": []
+      },
+      {
+        "action": "SHELL",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "BACK",
+        "before": [
+          "BJAB",
+          "JAB",
+          "PRESS",
+          "PROBE",
+          "RESET"
+        ],
+        "after": [
+          "BJAB",
+          "JAB",
+          "PRESS",
+          "PROBE",
+          "REENTER",
+          "RESET"
+        ],
+        "added": [
+          "REENTER"
+        ]
+      },
+      {
+        "action": "LAT",
+        "before": [
+          "LH",
+          "PRESS",
+          "RESET"
+        ],
+        "after": [
+          "LH",
+          "PRESS",
+          "RESET"
+        ],
+        "added": []
+      },
+      {
+        "action": "PIVOT",
+        "before": [
+          "RESET"
+        ],
+        "after": [
+          "RESET"
+        ],
+        "added": []
+      },
+      {
+        "action": "CLINCH",
+        "before": [],
+        "after": [
+          "BACK",
+          "LAT"
+        ],
+        "added": [
+          "BACK",
+          "LAT"
+        ]
+      },
+      {
+        "action": "FRAME",
+        "before": [
+          "PIVOT"
+        ],
+        "after": [
+          "PIVOT"
+        ],
+        "added": []
+      },
+      {
+        "action": "SMOTHER",
+        "before": [
+          "CLINCH",
+          "FRAME"
+        ],
+        "after": [
+          "CLINCH",
+          "FRAME"
+        ],
+        "added": []
+      },
+      {
+        "action": "JF",
+        "before": [
+          "CC",
+          "READ",
+          "SPLIT",
+          "WIDE"
+        ],
+        "after": [
+          "BACK",
+          "CC",
+          "READ",
+          "SPLIT",
+          "WIDE"
+        ],
+        "added": [
+          "BACK"
+        ]
+      },
+      {
+        "action": "LF",
+        "before": [
+          "ELBOW"
+        ],
+        "after": [
+          "ELBOW",
+          "INTERCEPT",
+          "READ"
+        ],
+        "added": [
+          "INTERCEPT",
+          "READ"
+        ]
+      },
+      {
+        "action": "SF",
+        "before": [
+          "READ",
+          "SOUT"
+        ],
+        "after": [
+          "INTERCEPT",
+          "READ",
+          "SOUT"
+        ],
+        "added": [
+          "INTERCEPT"
+        ]
+      },
+      {
+        "action": "STEPF",
+        "before": [
+          "BACK",
+          "READ"
+        ],
+        "after": [
+          "BACK",
+          "INTERCEPT",
+          "READ"
+        ],
+        "added": [
+          "INTERCEPT"
+        ]
+      },
+      {
+        "action": "PROBE",
+        "before": [
+          "PARRY",
+          "READ"
+        ],
+        "after": [
+          "PARRY",
+          "READ"
+        ],
+        "added": []
+      },
+      {
+        "action": "HAND",
+        "before": [
+          "INFOOT"
+        ],
+        "after": [
+          "INFOOT"
+        ],
+        "added": []
+      },
+      {
+        "action": "GM",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "LEVEL",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "RHYTHM",
+        "before": [
+          "WIDE"
+        ],
+        "after": [
+          "WIDE"
+        ],
+        "added": []
+      },
+      {
+        "action": "TEMPO",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "TRAP",
+        "before": [
+          "JAB"
+        ],
+        "after": [
+          "JAB"
+        ],
+        "added": []
+      },
+      {
+        "action": "OUTFOOT",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "INFOOT",
+        "before": [],
+        "after": [],
+        "added": []
+      },
+      {
+        "action": "PRESS",
+        "before": [
+          "BACK",
+          "CJ",
+          "CPRESS",
+          "HG",
+          "LAT"
+        ],
+        "after": [
+          "BACK",
+          "CJ",
+          "CPRESS",
+          "HG",
+          "LAT"
+        ],
+        "added": []
+      },
+      {
+        "action": "CPRESS",
+        "before": [
+          "CATCH",
+          "SOUT"
+        ],
+        "after": [
+          "CATCH",
+          "SOUT"
+        ],
+        "added": []
+      },
+      {
+        "action": "EXIT",
+        "before": [
+          "RESET"
+        ],
+        "after": [
+          "PRESS",
+          "RESET"
+        ],
+        "added": [
+          "PRESS"
+        ]
+      },
+      {
+        "action": "RESET",
+        "before": [],
+        "after": [
+          "READ"
+        ],
+        "added": [
+          "READ"
+        ]
+      },
+      {
+        "action": "READ",
+        "before": [
+          "JAB"
+        ],
+        "after": [
+          "JAB",
+          "PROBE"
+        ],
+        "added": [
+          "PROBE"
+        ]
+      },
+      {
+        "action": "REENTER",
+        "before": [],
+        "after": [
+          "INTERCEPT"
+        ],
+        "added": [
+          "INTERCEPT"
+        ]
+      }
+    ],
+    "limits": [
+      "모든 선택지의 완전성 증명은 아니다. 동작의 크기·시간·거리·체형은 연속 변수다.",
+      "새 분기는 공동 자세의 정밀 생체역학 시뮬레이션이나 경기 빈도 검증을 거치지 않았다.",
+      "피격·빗나감·방어 실패·균형 붕괴는 기존 성공 연쇄를 중단시키는 결과다. 다운·심판 카운트·경기 중단의 세부 결과 그래프는 미작성.",
+      "피로·점수·남은 시간·리치·반응 습관·스탠스 전환에 따른 정책 변화는 아직 조건 설명만 가능하다.",
+      "앞/뒷손·머리/보디가 뭉친 BH·CB·CH·COMBO·DELAY 등은 기술별 세분화가 남아 있다.",
+      "다른 스탠스 사례는 제한적이다. OS에서 A/B 반전은 역할 변환만 하며 SS나 발 위치를 자동 생성하지 않는다."
+    ],
+    "sources_checked": [
+      "S06",
+      "S07",
+      "S08",
+      "S10",
+      "S11",
+      "S14",
+      "S23",
+      "S24"
+    ],
+    "unread_sources": [
+      "S02: 이번 웹 재조회에서 PDF 수신 실패. 기존 참고 문헌으로만 유지",
+      "S16: 기존 링크 응답 실패. 새 분기 근거로 사용하지 않음"
+    ]
+  }
 }

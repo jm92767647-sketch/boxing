@@ -1,0 +1,879 @@
+{
+  "date": "2026-10-07",
+  "reviewed_routes": 64,
+  "added_routes": 41,
+  "total_routes": 105,
+  "method": "모든 경로의 행위자·직접 전이·방어 대상·거리 조건·심판 종료를 검사하고, 기본 공격과 방어의 빈칸을 코칭 자료와 대조했다. 새 연쇄는 조건부 전술 추론이다.",
+  "findings": [
+    "훅·어퍼컷·오버핸드·콤비네이션의 손 방어와 거리 이탈 보완",
+    "잽의 덕·블록 후 잽·패리 후 보디 반격 추가",
+    "페인트 무반응·거리 이탈·선제 타격 추가",
+    "슬립·풀·롤 위치를 다시 겨냥하는 후속 타격 명시",
+    "사거리 밖 후퇴 뒤 재진입과 인터셉트 분리",
+    "클린치 실패·이탈 출구 차단·압박 저지 추가",
+    "SS·OS의 실제 손 위치 조건 추가"
+  ],
+  "clarified_routes": {
+    "N08_P1": "위험·실패 복구 예시: 어퍼컷에 중앙 덕은 유효 방어로 추천하지 않는다. 뒤의 블록은 같은 최초 어퍼컷이 도착하기 전 가능한 경우뿐이며 이미 피격되면 경로 중단.",
+    "N05_P2": "후퇴 뒤 사거리 확인: 여기의 BACK은 원모델에서 long(끝거리)이며 사거리 밖으로 확정하지 않는다. BJAB 조건은 실제 몸통 도달을 요구한다. outside이면 재진입부터 필요하다.",
+    "N10_P2": "CPRESS는 이 경로에서 실제 짧은 직선 저지 타격을 포함한다. 뒤 CATCH의 대상은 그 직선이며 단순 압박·발 움직임을 캐치하는 것이 아니다.",
+    "N22_P1": "DELAY는 이 구간에서 타격 실행보다 반격 보류를 뜻한다. 상대의 LH가 시작된 뒤 ROLL은 그 훅을 피하는 동작이다.",
+    "N23_P1": "밀착 후 RESET은 실제 접촉 해제와 pocket 거리 복구를 포함한다. FRAME 뒤 잡은 채 LU를 치는 경로가 아니다."
+  },
+  "coverage": [
+    {
+      "action": "JAB",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "CATCH",
+        "HG",
+        "LAT",
+        "PARRY",
+        "PULL",
+        "SIN",
+        "SOUT",
+        "SPLIT",
+        "SSTEP",
+        "SWAY"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "CATCH",
+        "DUCK",
+        "HG",
+        "LAT",
+        "PARRY",
+        "PULL",
+        "SIN",
+        "SOUT",
+        "SPLIT",
+        "SSTEP",
+        "SWAY"
+      ],
+      "added": [
+        "DUCK"
+      ]
+    },
+    {
+      "action": "DOUBLE",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "CHECK",
+        "INTERCEPT",
+        "LAT",
+        "SSTEP"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "CHECK",
+        "HG",
+        "INTERCEPT",
+        "LAT",
+        "SSTEP"
+      ],
+      "added": [
+        "HG"
+      ]
+    },
+    {
+      "action": "BJAB",
+      "before": [
+        "BACK",
+        "CATCH",
+        "ELBOW"
+      ],
+      "after": [
+        "BACK",
+        "CATCH",
+        "ELBOW",
+        "PARRY"
+      ],
+      "added": [
+        "PARRY"
+      ]
+    },
+    {
+      "action": "CROSS",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "HG",
+        "PARRY",
+        "PIVOT",
+        "SHELL",
+        "SIN",
+        "SOUT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "HG",
+        "LAT",
+        "PARRY",
+        "PIVOT",
+        "SHELL",
+        "SIN",
+        "SOUT"
+      ],
+      "added": [
+        "LAT"
+      ]
+    },
+    {
+      "action": "LH",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "ROLL",
+        "SPIVOT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "DUCK",
+        "ROLL",
+        "SPIVOT"
+      ],
+      "added": [
+        "DUCK"
+      ]
+    },
+    {
+      "action": "RH",
+      "before": [
+        "HG",
+        "INTERCEPT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "DUCK",
+        "HG",
+        "INTERCEPT",
+        "ROLL"
+      ],
+      "added": [
+        "BACK",
+        "BLOCK",
+        "DUCK",
+        "ROLL"
+      ]
+    },
+    {
+      "action": "BH",
+      "before": [
+        "ELBOW",
+        "EXIT"
+      ],
+      "after": [
+        "BACK",
+        "ELBOW",
+        "EXIT"
+      ],
+      "added": [
+        "BACK"
+      ]
+    },
+    {
+      "action": "LU",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "SMOTHER",
+        "SOUT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "SMOTHER",
+        "SOUT"
+      ],
+      "added": []
+    },
+    {
+      "action": "RU",
+      "before": [
+        "BLOCK",
+        "DUCK",
+        "SMOTHER",
+        "SOUT",
+        "SPIVOT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "DUCK",
+        "SMOTHER",
+        "SOUT",
+        "SPIVOT"
+      ],
+      "added": [
+        "BACK"
+      ]
+    },
+    {
+      "action": "OVER",
+      "before": [
+        "HG",
+        "SPIVOT"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "HG",
+        "LAT",
+        "SPIVOT"
+      ],
+      "added": [
+        "BACK",
+        "BLOCK",
+        "LAT"
+      ]
+    },
+    {
+      "action": "SHOVEL",
+      "before": [
+        "ELBOW",
+        "SMOTHER"
+      ],
+      "after": [
+        "BACK",
+        "ELBOW",
+        "SMOTHER"
+      ],
+      "added": [
+        "BACK"
+      ]
+    },
+    {
+      "action": "COMBO",
+      "before": [
+        "HG"
+      ],
+      "after": [
+        "BACK",
+        "HG"
+      ],
+      "added": [
+        "BACK"
+      ]
+    },
+    {
+      "action": "INTERCEPT",
+      "before": [
+        "PARRY",
+        "SIN",
+        "SOUT",
+        "SSTEP"
+      ],
+      "after": [
+        "BLOCK",
+        "PARRY",
+        "SIN",
+        "SOUT",
+        "SSTEP"
+      ],
+      "added": [
+        "BLOCK"
+      ]
+    },
+    {
+      "action": "CJ",
+      "before": [
+        "BACK",
+        "BLOCK",
+        "CATCH",
+        "EXIT",
+        "PARRY",
+        "RESET",
+        "SOUT",
+        "SSTEP"
+      ],
+      "after": [
+        "BACK",
+        "BLOCK",
+        "CATCH",
+        "EXIT",
+        "PARRY",
+        "RESET",
+        "SOUT",
+        "SSTEP"
+      ],
+      "added": []
+    },
+    {
+      "action": "CC",
+      "before": [
+        "BLOCK",
+        "CATCH",
+        "HG",
+        "SIN",
+        "SOUT"
+      ],
+      "after": [
+        "BLOCK",
+        "CATCH",
+        "HG",
+        "SIN",
+        "SOUT"
+      ],
+      "added": []
+    },
+    {
+      "action": "CH",
+      "before": [
+        "BLOCK",
+        "EXIT",
+        "HG",
+        "PIVOT",
+        "ROLL"
+      ],
+      "after": [
+        "BLOCK",
+        "EXIT",
+        "HG",
+        "PIVOT",
+        "ROLL"
+      ],
+      "added": []
+    },
+    {
+      "action": "CB",
+      "before": [
+        "ELBOW",
+        "EXIT"
+      ],
+      "after": [
+        "ELBOW",
+        "EXIT"
+      ],
+      "added": []
+    },
+    {
+      "action": "DELAY",
+      "before": [
+        "DOUBLE",
+        "LH"
+      ],
+      "after": [
+        "DOUBLE",
+        "LH"
+      ],
+      "added": []
+    },
+    {
+      "action": "CHECK",
+      "before": [
+        "BLOCK"
+      ],
+      "after": [
+        "BLOCK"
+      ],
+      "added": []
+    },
+    {
+      "action": "SPLIT",
+      "before": [
+        "PARRY",
+        "SOUT"
+      ],
+      "after": [
+        "PARRY",
+        "SOUT"
+      ],
+      "added": []
+    },
+    {
+      "action": "HG",
+      "before": [
+        "BH",
+        "BJAB",
+        "GM"
+      ],
+      "after": [
+        "BH",
+        "BJAB",
+        "EXIT",
+        "GM"
+      ],
+      "added": [
+        "EXIT"
+      ]
+    },
+    {
+      "action": "CATCH",
+      "before": [
+        "CROSS"
+      ],
+      "after": [
+        "CROSS"
+      ],
+      "added": []
+    },
+    {
+      "action": "BLOCK",
+      "before": [
+        "DOUBLE",
+        "EXIT",
+        "LH"
+      ],
+      "after": [
+        "DOUBLE",
+        "EXIT",
+        "LH"
+      ],
+      "added": []
+    },
+    {
+      "action": "ELBOW",
+      "before": [
+        "EXIT",
+        "LH",
+        "LU",
+        "OVER"
+      ],
+      "after": [
+        "EXIT",
+        "LH",
+        "LU",
+        "OVER"
+      ],
+      "added": []
+    },
+    {
+      "action": "PARRY",
+      "before": [
+        "DOUBLE",
+        "EXIT",
+        "RHYTHM"
+      ],
+      "after": [
+        "DOUBLE",
+        "EXIT",
+        "RHYTHM"
+      ],
+      "added": []
+    },
+    {
+      "action": "WIDE",
+      "before": [
+        "CROSS",
+        "LH"
+      ],
+      "after": [
+        "CROSS",
+        "LH"
+      ],
+      "added": []
+    },
+    {
+      "action": "SOUT",
+      "before": [
+        "DOUBLE",
+        "EXIT",
+        "LH"
+      ],
+      "after": [
+        "DOUBLE",
+        "EXIT",
+        "LH"
+      ],
+      "added": []
+    },
+    {
+      "action": "SIN",
+      "before": [
+        "EXIT",
+        "LH"
+      ],
+      "after": [
+        "CROSS",
+        "EXIT",
+        "LH"
+      ],
+      "added": [
+        "CROSS"
+      ]
+    },
+    {
+      "action": "SSTEP",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "SPIVOT",
+      "before": [
+        "RESET"
+      ],
+      "after": [
+        "RESET"
+      ],
+      "added": []
+    },
+    {
+      "action": "PULL",
+      "before": [
+        "DOUBLE"
+      ],
+      "after": [
+        "BJAB",
+        "DOUBLE"
+      ],
+      "added": [
+        "BJAB"
+      ]
+    },
+    {
+      "action": "SWAY",
+      "before": [
+        "LEVEL"
+      ],
+      "after": [
+        "LEVEL"
+      ],
+      "added": []
+    },
+    {
+      "action": "DUCK",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "ROLL",
+      "before": [
+        "EXIT",
+        "RU"
+      ],
+      "after": [
+        "EXIT",
+        "RU"
+      ],
+      "added": []
+    },
+    {
+      "action": "SHELL",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "BACK",
+      "before": [
+        "BJAB",
+        "JAB",
+        "PRESS",
+        "PROBE",
+        "RESET"
+      ],
+      "after": [
+        "BJAB",
+        "JAB",
+        "PRESS",
+        "PROBE",
+        "REENTER",
+        "RESET"
+      ],
+      "added": [
+        "REENTER"
+      ]
+    },
+    {
+      "action": "LAT",
+      "before": [
+        "LH",
+        "PRESS",
+        "RESET"
+      ],
+      "after": [
+        "LH",
+        "PRESS",
+        "RESET"
+      ],
+      "added": []
+    },
+    {
+      "action": "PIVOT",
+      "before": [
+        "RESET"
+      ],
+      "after": [
+        "RESET"
+      ],
+      "added": []
+    },
+    {
+      "action": "CLINCH",
+      "before": [],
+      "after": [
+        "BACK",
+        "LAT"
+      ],
+      "added": [
+        "BACK",
+        "LAT"
+      ]
+    },
+    {
+      "action": "FRAME",
+      "before": [
+        "PIVOT"
+      ],
+      "after": [
+        "PIVOT"
+      ],
+      "added": []
+    },
+    {
+      "action": "SMOTHER",
+      "before": [
+        "CLINCH",
+        "FRAME"
+      ],
+      "after": [
+        "CLINCH",
+        "FRAME"
+      ],
+      "added": []
+    },
+    {
+      "action": "JF",
+      "before": [
+        "CC",
+        "READ",
+        "SPLIT",
+        "WIDE"
+      ],
+      "after": [
+        "BACK",
+        "CC",
+        "READ",
+        "SPLIT",
+        "WIDE"
+      ],
+      "added": [
+        "BACK"
+      ]
+    },
+    {
+      "action": "LF",
+      "before": [
+        "ELBOW"
+      ],
+      "after": [
+        "ELBOW",
+        "INTERCEPT",
+        "READ"
+      ],
+      "added": [
+        "INTERCEPT",
+        "READ"
+      ]
+    },
+    {
+      "action": "SF",
+      "before": [
+        "READ",
+        "SOUT"
+      ],
+      "after": [
+        "INTERCEPT",
+        "READ",
+        "SOUT"
+      ],
+      "added": [
+        "INTERCEPT"
+      ]
+    },
+    {
+      "action": "STEPF",
+      "before": [
+        "BACK",
+        "READ"
+      ],
+      "after": [
+        "BACK",
+        "INTERCEPT",
+        "READ"
+      ],
+      "added": [
+        "INTERCEPT"
+      ]
+    },
+    {
+      "action": "PROBE",
+      "before": [
+        "PARRY",
+        "READ"
+      ],
+      "after": [
+        "PARRY",
+        "READ"
+      ],
+      "added": []
+    },
+    {
+      "action": "HAND",
+      "before": [
+        "INFOOT"
+      ],
+      "after": [
+        "INFOOT"
+      ],
+      "added": []
+    },
+    {
+      "action": "GM",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "LEVEL",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "RHYTHM",
+      "before": [
+        "WIDE"
+      ],
+      "after": [
+        "WIDE"
+      ],
+      "added": []
+    },
+    {
+      "action": "TEMPO",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "TRAP",
+      "before": [
+        "JAB"
+      ],
+      "after": [
+        "JAB"
+      ],
+      "added": []
+    },
+    {
+      "action": "OUTFOOT",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "INFOOT",
+      "before": [],
+      "after": [],
+      "added": []
+    },
+    {
+      "action": "PRESS",
+      "before": [
+        "BACK",
+        "CJ",
+        "CPRESS",
+        "HG",
+        "LAT"
+      ],
+      "after": [
+        "BACK",
+        "CJ",
+        "CPRESS",
+        "HG",
+        "LAT"
+      ],
+      "added": []
+    },
+    {
+      "action": "CPRESS",
+      "before": [
+        "CATCH",
+        "SOUT"
+      ],
+      "after": [
+        "CATCH",
+        "SOUT"
+      ],
+      "added": []
+    },
+    {
+      "action": "EXIT",
+      "before": [
+        "RESET"
+      ],
+      "after": [
+        "PRESS",
+        "RESET"
+      ],
+      "added": [
+        "PRESS"
+      ]
+    },
+    {
+      "action": "RESET",
+      "before": [],
+      "after": [
+        "READ"
+      ],
+      "added": [
+        "READ"
+      ]
+    },
+    {
+      "action": "READ",
+      "before": [
+        "JAB"
+      ],
+      "after": [
+        "JAB",
+        "PROBE"
+      ],
+      "added": [
+        "PROBE"
+      ]
+    },
+    {
+      "action": "REENTER",
+      "before": [],
+      "after": [
+        "INTERCEPT"
+      ],
+      "added": [
+        "INTERCEPT"
+      ]
+    }
+  ],
+  "limits": [
+    "모든 선택지의 완전성 증명은 아니다. 동작의 크기·시간·거리·체형은 연속 변수다.",
+    "새 분기는 공동 자세의 정밀 생체역학 시뮬레이션이나 경기 빈도 검증을 거치지 않았다.",
+    "피격·빗나감·방어 실패·균형 붕괴는 기존 성공 연쇄를 중단시키는 결과다. 다운·심판 카운트·경기 중단의 세부 결과 그래프는 미작성.",
+    "피로·점수·남은 시간·리치·반응 습관·스탠스 전환에 따른 정책 변화는 아직 조건 설명만 가능하다.",
+    "앞/뒷손·머리/보디가 뭉친 BH·CB·CH·COMBO·DELAY 등은 기술별 세분화가 남아 있다.",
+    "다른 스탠스 사례는 제한적이다. OS에서 A/B 반전은 역할 변환만 하며 SS나 발 위치를 자동 생성하지 않는다."
+  ],
+  "sources_checked": [
+    "S06",
+    "S07",
+    "S08",
+    "S10",
+    "S11",
+    "S14",
+    "S23",
+    "S24"
+  ],
+  "unread_sources": [
+    "S02: 이번 웹 재조회에서 PDF 수신 실패. 기존 참고 문헌으로만 유지",
+    "S16: 기존 링크 응답 실패. 새 분기 근거로 사용하지 않음"
+  ]
+}

@@ -6,6 +6,7 @@
 
 - [웹사이트](https://jm92767647-sketch.github.io/boxing/)
 - `index.html` / `boxing-decision-network.html`: 행동별 분기 탐색
+- `audit-report.html`: 누락 재검토·추가 내역·미작성 범위
 - `research-report.html`: 연구 보고서
 - `boxing-state-network.html`: 기존 공동 상태 지도
 
@@ -15,7 +16,7 @@ GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.
 
 ## 데이터 범위
 
-기존 작성 경로 48개와 조건부 보완 분기 16개. 실제 복싱의 모든 선택지를 완전히 망라하거나 성공률을 검증한 모델은 아닙니다.
+기존 작성 경로 48개와 조건부 보완 분기 57개 (2026-10-07 재검증에서 41개 추가). 실제 복싱의 모든 선택지를 완전히 망라하거나 성공률을 검증한 모델은 아닙니다.
 기본 동작의 코칭 근거와 다단계 전술 추론을 구별하며, 모든 실행은 거리·타이밍·자세 조건에 의존합니다.
 
 ## 주요 데이터
@@ -25,4 +26,4 @@ GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.
 - `validation.json`: 기존 검증 기록
 - `explorer-validation.json`: 탐색 구조·버튼 동작 검사 기록
 
-2026-10-02
+2026-10-07
