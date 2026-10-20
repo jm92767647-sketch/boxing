@@ -1,0 +1,8 @@
+@font-face{font-family:'DM Sans';src:url('./assets/fonts/dm-sans-variable.ttf') format('truetype');font-style:normal;font-weight:100 1000;font-display:swap}
+@font-face{font-family:'DM Serif Display';src:url('./assets/fonts/dm-serif-display.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'S-Core Dream';src:url('./assets/fonts/s-core-dream-regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'S-Core Dream';src:url('./assets/fonts/s-core-dream-medium.woff2') format('woff2');font-style:normal;font-weight:500 900;font-display:swap}
+:root{--body-font:'DM Sans','S-Core Dream',sans-serif;--display-font:'DM Serif Display','S-Core Dream',serif;font-family:var(--body-font)}
+body,button,input,select,textarea,summary{font-family:var(--body-font)}
+h1,h2,.modalhead h2{font-family:var(--display-font);font-weight:400}
+body .site-navigation a,svg text{font-family:var(--body-font)}
