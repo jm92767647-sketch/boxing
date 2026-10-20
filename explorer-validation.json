@@ -4,6 +4,9 @@
   "actions": 60,
   "side_action_cases": 120,
   "consecutive_pairs": 73,
+  "map_nodes": 60,
+  "map_response_edges": 240,
+  "map_sequence_edges": 72,
   "unspecific_pairs": [],
   "checks": [
     "Both player starting points preserve source roles",
@@ -12,7 +15,10 @@
     "All movement popups retain description, benefit and weakness",
     "Modal jump preserves route and player identity",
     "Consecutive actions explain their relation",
-    "Response uses exclude same-player transitions",
+    "Incoming use cases retain complete defensive preparation and apply filters",
+    "Unsafe uppercut-duck examples excluded from recommendations",
+    "Map edges are backed by actual route occurrences",
+    "Map focus, full view, zoom, fit and close work",
     "Back, search, stance and inference filters"
   ]
 }
