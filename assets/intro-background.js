@@ -88,8 +88,8 @@
     for(const [u,v,eu,ev]of[[.945,.470,1.50,.03],[.952,.588,1.70,.17],[.957,.708,1.88,.63]]){
       const ax=x+u*pw,ay=y+v*ph,ex=x+eu*pw,ey=y+ev*ph;
       const gradient=ropes.createLinearGradient(ax,ay,ex,ey);
-      gradient.addColorStop(0,'rgba(38,65,85,.94)');gradient.addColorStop(.5,'rgba(40,70,95,.75)');gradient.addColorStop(1,'rgba(42,70,95,.30)');
-      ropes.lineCap='round';ropes.strokeStyle=gradient;ropes.lineWidth=Math.max(1.5*density,pw*.008);
+      gradient.addColorStop(0,'rgba(55,100,136,.90)');gradient.addColorStop(.5,'rgba(50,91,126,.65)');gradient.addColorStop(1,'rgba(42,75,106,.25)');
+      ropes.lineCap='round';ropes.strokeStyle=gradient;ropes.lineWidth=Math.max(1.5*density,pw*.012);
       ropes.beginPath();ropes.moveTo(ax,ay);
       ropes.bezierCurveTo(ax+(ex-ax)*.30,ay+(ey-ay)*.27+ph*.012,ax+(ex-ax)*.70,ay+(ey-ay)*.68+ph*.014,ex,ey);ropes.stroke();
 
