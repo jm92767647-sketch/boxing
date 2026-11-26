@@ -5,11 +5,12 @@
 복싱의 내 행동 → 상대 대응 → 내 재대응을 조건과 함께 탐색하는 정적 웹사이트.
 
 - [웹사이트](https://jm92767647-sketch.github.io/boxing/)
-- `index.html` / `boxing-decision-network.html`: 행동별 분기 탐색
+- `index.html` / `boxing-decision-network.html`: 처음 들어올 때 START 시작 화면, 이후 행동별 분기 탐색
 - `audit-report.html`: 누락 재검토·추가 내역·미작성 범위
 - `research-report.html`: 연구 보고서
 - `boxing-state-network.html`: 기존 공동 상태 지도
 
+시작 화면은 탭을 새로 열 때 한 번만 나오고, 왼쪽 위 BOXING을 누르면 탐색 시작 화면으로 돌아옵니다.
 세 페이지 사이를 이동할 수 있으며, 보고서와 기존 지도에 메인 페이지로 돌아오는 버튼이 있습니다.
 외부 서비스나 빌드 없이 HTML을 직접 열어 사용할 수 있습니다.
 GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.
@@ -26,5 +27,7 @@ GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.
 - `explorer-data.json`: 개정 탐색 데이터
 - `validation.json`: 기존 검증 기록
 - `explorer-validation.json`: 탐색 구조·버튼 동작 검사 기록
+
+사진: Joel Muniz / Unsplash (Unsplash License), `assets/intro.webp`
 
 2026-11-26
