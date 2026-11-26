@@ -1,36 +1,43 @@
-/* Extend the actual edges of the contained photograph, rather than a second crop. */
+/* Paint a synthesized arena scene behind the untouched source photograph. */
 (() => {
   'use strict';
   const intro = document.getElementById('intro');
   const image = intro?.querySelector('.introart');
   const output = intro?.querySelector('canvas.introbg');
   if (!image || !output || document.documentElement.classList.contains('no-intro')) return;
-  let frame;
+  const scenery = new Image();
+  let frame, variant;
+  function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(paint); }
+  scenery.addEventListener('load', schedule);
   function paint() {
-    if (!image.naturalWidth || intro.hidden) return;
-    const bounds = intro.getBoundingClientRect(), photo = image.getBoundingClientRect();
-    if (!bounds.width || !bounds.height || !photo.width) return;
-    // Work at half resolution: this layer is deliberately blurred and redraws only on resize.
-    const scale = Math.min(.5, 960 / bounds.width), pad = 96;
-    const w = Math.ceil(bounds.width * scale), h = Math.ceil(bounds.height * scale);
-    const x = (photo.left - bounds.left) * scale, y = (photo.top - bounds.top) * scale;
+    if (intro.hidden || !image.naturalWidth) return;
+    const box = intro.getBoundingClientRect(), photo = image.getBoundingClientRect();
+    if (!box.width || !box.height || !photo.width) return;
+    const mobile = box.width <= 760, next = mobile ? 'mobile' : 'desktop';
+    if (variant !== next) {
+      variant = next; scenery.src = `assets/intro-scene-${next}.jpg?v=20261126`;
+      return;
+    }
+    if (!scenery.complete || !scenery.naturalWidth) return;
+    const scale = Math.min(.75, 1200 / box.width), pad = 80;
+    const w = Math.ceil(box.width * scale), h = Math.ceil(box.height * scale);
+    const x = (photo.left - box.left) * scale, y = (photo.top - box.top) * scale;
     const pw = photo.width * scale, ph = photo.height * scale;
-    const iw = image.naturalWidth, ih = image.naturalHeight;
     const source = document.createElement('canvas');
     source.width = w + pad * 2; source.height = h + pad * 2;
     const ctx = source.getContext('2d');
-    // Nine slices extend each edge in its own direction, preserving its varying colors.
-    const sx = [0, 0, iw - 1], sy = [0, 0, ih - 1];
-    const sw = [1, iw, 1], sh = [1, ih, 1];
-    const dx = [0, x + pad, x + pw + pad], dy = [0, y + pad, y + ph + pad];
-    const dw = [x + pad, pw, w + pad - x - pw];
-    const dh = [y + pad, ph, h + pad - y - ph];
-    for (let row = 0; row < 3; row++) for (let col = 0; col < 3; col++) {
-      if (dw[col] > 0 && dh[row] > 0) ctx.drawImage(image, sx[col], sy[row], sw[col], sh[row], dx[col], dy[row], dw[col], dh[row]);
+    // Align the actual generated ropes/canvas to the original. Extend whole scene
+    // regions with their own texture and perspective; never repeat an edge pixel.
+    const cuts = mobile ? [0, .302, .5, 1] : [0, .51, .80, 1];
+    const target = [-pad, y + ph * .5, y + ph * .818, h + pad];
+    for (let i = 0; i < cuts.length - 1; i++) {
+      ctx.drawImage(scenery, 0, cuts[i] * scenery.naturalHeight,
+        scenery.naturalWidth, (cuts[i+1] - cuts[i]) * scenery.naturalHeight,
+        0, target[i] + pad, w + pad * 2, target[i+1] - target[i]);
     }
     output.width = w; output.height = h;
     const final = output.getContext('2d');
-    for (const [radius, from, to] of [[6, null, null], [22, -12, 85], [48, 45, 230]]) {
+    for (const [radius, from, to] of [[5, null, null], [19, -8, 75], [42, 45, 220]]) {
       const layer = document.createElement('canvas'); layer.width = w; layer.height = h;
       const lc = layer.getContext('2d');
       lc.filter = `blur(${radius * scale}px)`;
@@ -46,8 +53,8 @@
       }
       final.drawImage(layer, 0, 0);
     }
+    output.dataset.scene = variant;
   }
-  function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(paint); }
   image.addEventListener('load', schedule, { once: true });
   if (image.complete) schedule();
   const observer = new ResizeObserver(schedule); observer.observe(intro); observer.observe(image);
