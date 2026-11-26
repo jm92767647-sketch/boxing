@@ -82,6 +82,19 @@
     const grade=ctx.createLinearGradient(0,0,0,y+ph*.84+pad);
     grade.addColorStop(0,'rgba(2,5,10,.32)');grade.addColorStop(.78,'rgba(2,5,10,.32)');grade.addColorStop(1,'rgba(2,5,10,0)');
     ctx.fillStyle=grade;ctx.fillRect(0,0,arena.width,arena.height);
+    // The far side ends at the original right turnbuckles. Its returning side
+    // bends up/right into depth, following the user's annotated three paths.
+    const ropes=ctx;ropes.save();ropes.translate(pad,pad);
+    for(const [u,v,eu,ev]of[[.945,.470,1.50,.03],[.952,.588,1.70,.17],[.957,.708,1.88,.63]]){
+      const ax=x+u*pw,ay=y+v*ph,ex=x+eu*pw,ey=y+ev*ph;
+      const gradient=ropes.createLinearGradient(ax,ay,ex,ey);
+      gradient.addColorStop(0,'rgba(38,65,85,.94)');gradient.addColorStop(.5,'rgba(40,70,95,.75)');gradient.addColorStop(1,'rgba(42,70,95,.30)');
+      ropes.lineCap='round';ropes.strokeStyle=gradient;ropes.lineWidth=Math.max(1.5*density,pw*.008);
+      ropes.beginPath();ropes.moveTo(ax,ay);
+      ropes.bezierCurveTo(ax+(ex-ax)*.30,ay+(ey-ay)*.27+ph*.012,ax+(ex-ax)*.70,ay+(ey-ay)*.68+ph*.014,ex,ey);ropes.stroke();
+
+    }
+    ropes.restore();
     const background=surface(w,h),bg=background.getContext('2d');
     bg.filter=`blur(${9*density}px)`;bg.drawImage(arena,-pad,-pad);bg.filter='none';
     const foreground=resized(background,w,h);foreground.getContext('2d').drawImage(photo,x,y,pw,ph);
@@ -96,16 +109,16 @@
         const oval=Math.sqrt(((u-.5)/.50)**2+((v-.50)/.54)**2);
         const body=Math.sqrt(((u-.46)/.23)**2+((v-.49)/.36)**2);
         const ground=Math.hypot(Math.max(.12-u,0,u-.84)/.14,(v-.84)/.145);
-        const corner=Math.hypot((u-.922)/.085,(v-.575)/.225);
-        alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28),1-smooth((corner-.64)/.36));
-        // Retain the pale original pads, but remove their old outgoing blue
-        // fragments (including the stray horizontal strand behind the top pad).
-        if(u>.923&&v>.30&&v<.77){
-          const index=(py*w+px)*4;
-          const neutralLight=Math.min(originalPixels[index],originalPixels[index+1],originalPixels[index+2]);
-          const padOnly=smooth((neutralLight-85)/65);
-          alpha*=1-smooth((u-.923)/.014)*(1-padOnly);
-        }
+        const neutralIndex=(py*w+px)*4;
+        const neutralLight=Math.min(originalPixels[neutralIndex],originalPixels[neutralIndex+1],originalPixels[neutralIndex+2]);
+        const padOnly=smooth((neutralLight-85)/65);
+        const nearestPad=Math.min(Math.hypot((u-.918)/.055,(v-.482)/.038),Math.hypot((u-.927)/.055,(v-.598)/.038),Math.hypot((u-.936)/.055,(v-.717)/.038));
+        const pads=1-smooth((nearestPad-.62)/.38);
+        alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28),pads*padOnly);
+        // An oval cleanup region removes obsolete rope fragments; no vertical
+        // x-threshold or corner-shaped sharpness island can create a straight seam.
+        const cornerCleanup=1-smooth((Math.hypot((u-1.02)/.18,(v-.55)/.30)-.55)/.45);
+        alpha*=1-cornerCleanup*(1-padOnly);
         // Even subject support fades before the finite source boundary.
         alpha*=smooth(Math.min(u,1-u,v,1-v)/.035);
       }
@@ -113,32 +126,20 @@
     }
     maskContext.putImageData(maskPixels,0,0);
     const composite=blend(foreground,background,mask);
-    // The far side ends at the original right turnbuckles. Its returning side
-    // bends up/right into depth, following the user's annotated three paths.
-    const ropes=composite.getContext('2d');
-    for(const [u,v,eu,ev]of[[.945,.470,1.50,.03],[.952,.588,1.70,.17],[.957,.708,1.88,.63]]){
-      const ax=x+u*pw,ay=y+v*ph,ex=x+eu*pw,ey=y+ev*ph;
-      const gradient=ropes.createLinearGradient(ax,ay,ex,ey);
-      gradient.addColorStop(0,'rgba(38,65,85,.94)');gradient.addColorStop(.5,'rgba(40,70,95,.75)');gradient.addColorStop(1,'rgba(42,70,95,.30)');
-      ropes.lineCap='round';ropes.strokeStyle=gradient;ropes.lineWidth=Math.max(1.5*density,pw*.006);
-      ropes.beginPath();ropes.moveTo(ax,ay);
-      ropes.bezierCurveTo(ax+(ex-ax)*.30,ay+(ey-ay)*.27+ph*.012,ax+(ex-ax)*.70,ay+(ey-ay)*.68+ph*.014,ex,ey);ropes.stroke();
-      // A restrained upper highlight gives the blue rope a round, lit surface.
-      ropes.strokeStyle='rgba(107,130,148,.23)';ropes.lineWidth=Math.max(.5*density,pw*.0015);ropes.stroke();
-    }
     const sharp=surface(w,h);sharp.getContext('2d').drawImage(composite,0,0);
-    // Blur the already unified image progressively away from the original scene.
-    for(const [radius,start,finish]of[[18,.10,.32],[38,.25,.65]]){
+    // One circular distance field drives the blur for the whole composite,
+    // including pads, source ropes, newly continued ropes, crowd and floor.
+    const focusX=x+pw*.50,focusY=y+ph*.49,focusRadius=Math.min(pw,ph)*.56;
+    for(const [radius,start,finish]of[[5,.56,.86],[12,.72,1.10],[25,.95,1.55],[42,1.25,2.15]]){
       const layer=resized(sharp,w,h,radius*density),lc=layer.getContext('2d'),pixels=lc.getImageData(0,0,w,h);
       for(let py=0;py<h;py++)for(let px=0;px<w;px++){
-        const nx=(px-(x+pw*.5))/(pw*.56),ny=(py-(y+ph*.50))/(ph*.58);
-        const distance=Math.max(0,Math.hypot(nx,ny)-1);
+        const distance=Math.hypot(px-focusX,py-focusY)/focusRadius;
         pixels.data[(py*w+px)*4+3]=Math.round(255*smooth((distance-start)/(finish-start)));
       }
       lc.putImageData(pixels,0,0);composite.getContext('2d').drawImage(layer,0,0);
     }
     output.width=w;output.height=h;output.getContext('2d').drawImage(composite,0,0);
-    output.dataset.scene=next;output.dataset.composite='multiband';output.dataset.ropes='corner-return';
+    output.dataset.scene=next;output.dataset.composite='multiband';output.dataset.ropes='corner-return';output.dataset.blur='unified-circular';
     output.dataset.photoBottom=String(Math.round((y+ph)/density));
     output.dataset.contentTop=String(Math.round(ui.top-box.top));
     lastSize=key;
