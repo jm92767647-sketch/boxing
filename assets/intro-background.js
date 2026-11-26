@@ -85,6 +85,7 @@
     const background=surface(w,h),bg=background.getContext('2d');
     bg.filter=`blur(${9*density}px)`;bg.drawImage(arena,-pad,-pad);bg.filter='none';
     const foreground=resized(background,w,h);foreground.getContext('2d').drawImage(photo,x,y,pw,ph);
+    const originalPixels=foreground.getContext('2d').getImageData(0,0,w,h).data;
     const mask=surface(w,h),maskContext=mask.getContext('2d'),maskPixels=maskContext.createImageData(w,h);
     for(let py=0;py<h;py++)for(let px=0;px<w;px++){
       const u=(px-x)/pw,v=(py-y)/ph;
@@ -97,6 +98,14 @@
         const ground=Math.hypot(Math.max(.12-u,0,u-.84)/.14,(v-.84)/.145);
         const corner=Math.hypot((u-.922)/.085,(v-.575)/.225);
         alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28),1-smooth((corner-.64)/.36));
+        // Retain the pale original pads, but remove their old outgoing blue
+        // fragments (including the stray horizontal strand behind the top pad).
+        if(u>.923&&v>.30&&v<.77){
+          const index=(py*w+px)*4;
+          const neutralLight=Math.min(originalPixels[index],originalPixels[index+1],originalPixels[index+2]);
+          const padOnly=smooth((neutralLight-85)/65);
+          alpha*=1-smooth((u-.923)/.014)*(1-padOnly);
+        }
         // Even subject support fades before the finite source boundary.
         alpha*=smooth(Math.min(u,1-u,v,1-v)/.035);
       }

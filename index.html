@@ -207,7 +207,7 @@ for(const id of ['stance','distance','ring','supplement'])$(id).addEventListener
  $('search').addEventListener('input',renderActions);$('restart').addEventListener('click',goHome);$('brand-home').addEventListener('click',goHome);$('back').addEventListener('click',()=>{if(!history.length)return;const old=history.pop();({action,starter,exact,trail}=old);if(action===null)$('filters').open=false;render();});$('close-dialog').addEventListener('click',closeModal);$('move-dialog').addEventListener('click',e=>{if(e.target===$('move-dialog')){const rect=e.target.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)closeModal();}});$('modal-continue').addEventListener('click',()=>{const c=modalContext;closeModal();if(c)jump(c);});
 window.boxingExplorer={data:D,seeds,group,variants,choose,advance,jump,reason,uses,responseTarget,openMove,render,goHome,responseRecords,inboundGroups,inboundVariants,graphData,openMap,focusMap,renderMap,zoomMap,renderIncoming,getState:()=>({action,starter,exact,trail,cards,picks,incomingPicks,incomingSelected,mapFocus,mapMode,mapBox})};render();
 })();
-</script><script src="assets/intro-background.js?v=20261127-corner6"></script><script>
+</script><script src="assets/intro-background.js?v=20261127-corner7"></script><script>
 (()=>{'use strict';
  const intro=document.getElementById('intro');if(!intro||document.documentElement.classList.contains('no-intro')){if(intro)intro.hidden=true;return;}
  const root=document.documentElement,button=document.getElementById('introstart');
