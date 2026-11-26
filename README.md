@@ -28,7 +28,8 @@ GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.
 - `validation.json`: 기존 검증 기록
 - `explorer-validation.json`: 탐색 구조·버튼 동작 검사 기록
 
-사진: Wade Austin Ellis / Unsplash (Unsplash License), `assets/intro.webp` · 모바일용 `assets/intro-sm.webp`
-교체 방법: 같은 파일명으로 덮어쓰면 코드 수정 없이 바로 반영됩니다 (권장 비율 3:2, 가로 1500px 내외).
+인트로 사진: `assets/intro.jpg` (현재 Wade Austin Ellis / Unsplash, Unsplash License)
+교체 방법: 원하는 사진을 `intro.jpg`로 이름 바꿔 `assets/` 폴더에 덮어쓰면 끝. 코드 수정 불필요.
+권장: 가로형(3:2 내외), 가로 1500px 내외, PC·모바일 공용.
 
 2026-11-26
