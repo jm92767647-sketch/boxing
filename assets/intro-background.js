@@ -94,7 +94,7 @@
         // foreground supports retain the standing and reclining athletes in full.
         const oval=Math.sqrt(((u-.5)/.50)**2+((v-.50)/.54)**2);
         const body=Math.sqrt(((u-.46)/.23)**2+((v-.49)/.36)**2);
-        const ground=Math.sqrt(((u-.47)/.48)**2+((v-.82)/.17)**2);
+        const ground=Math.hypot(Math.max(.12-u,0,u-.84)/.14,(v-.84)/.145);
         alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28));
         // Even subject support fades before the finite source boundary.
         alpha*=smooth(Math.min(u,1-u,v,1-v)/.035);
