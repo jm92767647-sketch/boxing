@@ -5,20 +5,21 @@
   const image = intro?.querySelector('.introart');
   const output = intro?.querySelector('canvas.introbg');
   if (!image || !output || document.documentElement.classList.contains('no-intro')) return;
-  const scenery = new Image();
-  let frame, variant;
+  let scenery, frame, variant;
   function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(paint); }
-  scenery.addEventListener('load', schedule);
   function paint() {
     if (intro.hidden || !image.naturalWidth) return;
     const box = intro.getBoundingClientRect(), photo = image.getBoundingClientRect();
     if (!box.width || !box.height || !photo.width) return;
     const mobile = box.width <= 760, next = mobile ? 'mobile' : 'desktop';
     if (variant !== next) {
-      variant = next; scenery.src = `assets/intro-scene-${next}.jpg?v=20261126`;
+      variant = next; scenery = null;
+      const candidate = new Image();
+      candidate.onload = () => { if (variant === next) { scenery = candidate; schedule(); } };
+      candidate.src = `assets/intro-scene-${next}.jpg?v=20261126`;
       return;
     }
-    if (!scenery.complete || !scenery.naturalWidth) return;
+    if (!scenery || !scenery.complete || !scenery.naturalWidth) return;
     const scale = Math.min(.75, 1200 / box.width), pad = 80;
     const w = Math.ceil(box.width * scale), h = Math.ceil(box.height * scale);
     const x = (photo.left - box.left) * scale, y = (photo.top - box.top) * scale;
@@ -35,6 +36,12 @@
         scenery.naturalWidth, (cuts[i+1] - cuts[i]) * scenery.naturalHeight,
         0, target[i] + pad, w + pad * 2, target[i+1] - target[i]);
     }
+    // Match the dark original arena without darkening the continuing pale floor.
+    const grade = ctx.createLinearGradient(0, 0, 0, y + ph * .84 + pad);
+    grade.addColorStop(0, mobile ? 'rgba(2,5,10,.18)' : 'rgba(2,5,10,.38)');
+    grade.addColorStop(.78, mobile ? 'rgba(2,5,10,.18)' : 'rgba(2,5,10,.38)');
+    grade.addColorStop(1, 'rgba(2,5,10,0)');
+    ctx.fillStyle = grade; ctx.fillRect(0, 0, source.width, source.height);
     output.width = w; output.height = h;
     const final = output.getContext('2d');
     for (const [radius, from, to] of [[5, null, null], [19, -8, 75], [42, 45, 220]]) {
