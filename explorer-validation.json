@@ -1,9 +1,9 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-11-26",
   "passed": true,
-  "actions": 60,
+  "actions": 62,
   "side_action_cases": 120,
-  "consecutive_pairs": 73,
+  "consecutive_pairs": 181,
   "map_nodes": 60,
   "map_response_edges": 240,
   "map_sequence_edges": 72,
@@ -19,6 +19,15 @@
     "Unsafe uppercut-duck examples excluded from recommendations",
     "Map edges are backed by actual route occurrences",
     "Map focus, full view, zoom, fit and close work",
-    "Back, search, stance and inference filters"
-  ]
+    "Back, search, stance and inference filters",
+    "Every action runs only inside its declared ranges (step-in inserted where distance had to close)",
+    "Discouraged branches carry an inline warning in the explorer, not only in the audit report",
+    "actions/nodes/edges CSV export matches the published model, supplements included"
+  ],
+  "routes": 137,
+  "original_routes": 48,
+  "supplement_routes": 89,
+  "range_violations": 0,
+  "broken_links": 0,
+  "orphan_nodes": 0
 }
