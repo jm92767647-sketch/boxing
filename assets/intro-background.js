@@ -57,7 +57,7 @@
     if(variant!==next){
       variant=next;scenery=null;const candidate=new Image();
       candidate.onload=()=>{if(variant===next){scenery=candidate;lastSize='';schedule();}};
-      candidate.src=`assets/intro-scene-${next}.jpg?v=20261126`;return;
+      candidate.src=`assets/intro-audience-${next}.jpg?v=20261127`;return;
     }
     if(!scenery?.naturalWidth)return;
     const key=[box.width,box.height,ui.top,ui.height,next].join(':');if(lastSize===key)return;
@@ -95,7 +95,8 @@
         const oval=Math.sqrt(((u-.5)/.50)**2+((v-.50)/.54)**2);
         const body=Math.sqrt(((u-.46)/.23)**2+((v-.49)/.36)**2);
         const ground=Math.hypot(Math.max(.12-u,0,u-.84)/.14,(v-.84)/.145);
-        alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28));
+        const corner=Math.hypot((u-.922)/.085,(v-.575)/.225);
+        alpha=Math.max(1-smooth((oval-.50)/.50),1-smooth((body-.70)/.30),1-smooth((ground-.72)/.28),1-smooth((corner-.64)/.36));
         // Even subject support fades before the finite source boundary.
         alpha*=smooth(Math.min(u,1-u,v,1-v)/.035);
       }
@@ -103,6 +104,19 @@
     }
     maskContext.putImageData(maskPixels,0,0);
     const composite=blend(foreground,background,mask);
+    // The far side ends at the original right turnbuckles. Its returning side
+    // bends up/right into depth, following the user's annotated three paths.
+    const ropes=composite.getContext('2d');
+    for(const [u,v,eu,ev]of[[.945,.470,1.50,.03],[.952,.588,1.70,.17],[.957,.708,1.88,.63]]){
+      const ax=x+u*pw,ay=y+v*ph,ex=x+eu*pw,ey=y+ev*ph;
+      const gradient=ropes.createLinearGradient(ax,ay,ex,ey);
+      gradient.addColorStop(0,'rgba(38,65,85,.94)');gradient.addColorStop(.5,'rgba(40,70,95,.75)');gradient.addColorStop(1,'rgba(42,70,95,.30)');
+      ropes.lineCap='round';ropes.strokeStyle=gradient;ropes.lineWidth=Math.max(1.5*density,pw*.006);
+      ropes.beginPath();ropes.moveTo(ax,ay);
+      ropes.bezierCurveTo(ax+(ex-ax)*.30,ay+(ey-ay)*.27+ph*.012,ax+(ex-ax)*.70,ay+(ey-ay)*.68+ph*.014,ex,ey);ropes.stroke();
+      // A restrained upper highlight gives the blue rope a round, lit surface.
+      ropes.strokeStyle='rgba(107,130,148,.23)';ropes.lineWidth=Math.max(.5*density,pw*.0015);ropes.stroke();
+    }
     const sharp=surface(w,h);sharp.getContext('2d').drawImage(composite,0,0);
     // Blur the already unified image progressively away from the original scene.
     for(const [radius,start,finish]of[[18,.10,.32],[38,.25,.65]]){
@@ -115,7 +129,7 @@
       lc.putImageData(pixels,0,0);composite.getContext('2d').drawImage(layer,0,0);
     }
     output.width=w;output.height=h;output.getContext('2d').drawImage(composite,0,0);
-    output.dataset.scene=next;output.dataset.composite='multiband';
+    output.dataset.scene=next;output.dataset.composite='multiband';output.dataset.ropes='corner-return';
     output.dataset.photoBottom=String(Math.round((y+ph)/density));
     output.dataset.contentTop=String(Math.round(ui.top-box.top));
     lastSize=key;
